@@ -24,7 +24,7 @@ public final class WebDriverManager {
 
     private void initialize() {
         this.webDriver = WebDriverFactory.getWebDriver(webDriverConfig.getBrowser());
-        this.webDriver.get("https://www.calculadora.org/");
+        this.webDriver.get("http://automationpractice.com/index.php");
         this.webDriver.manage().window().maximize();
         this.webDriver.manage().timeouts().implicitlyWait(webDriverConfig.getImplicitWaitTime(), TimeUnit.SECONDS);
         webDriverWait = new WebDriverWait(webDriver, webDriverConfig.getExplicitWaitTime());
@@ -32,5 +32,9 @@ public final class WebDriverManager {
 
     public WebDriver getWebDriver() {
         return webDriver;
+    }
+
+    public WebDriverWait getWait(){
+        return webDriverWait;
     }
 }
