@@ -12,7 +12,6 @@ import java.util.concurrent.TimeUnit;
  * @version 0.0.1
  */
 public final class WebDriverManager {
-    private static WebDriverConfig webDriverConfig = WebDriverConfig.getInstance();
     private static WebDriver webDriver;
     private static WebDriverManager instance = null;
     private static WebDriverWait webDriverWait;
@@ -41,11 +40,12 @@ public final class WebDriverManager {
      * This method initializes the browser characteristics.
      */
     private void initialize() {
-        this.webDriver = WebDriverFactory.getWebDriver(webDriverConfig.getBrowser());
+        this.webDriver = WebDriverFactory.getWebDriver(WebDriverConfig.getInstance().getBrowser());
         this.webDriver.get("http://automationpractice.com/index.php");
         this.webDriver.manage().window().maximize();
-        this.webDriver.manage().timeouts().implicitlyWait(webDriverConfig.getImplicitWaitTime(), TimeUnit.SECONDS);
-        webDriverWait = new WebDriverWait(webDriver, webDriverConfig.getExplicitWaitTime());
+        this.webDriver.manage().timeouts().implicitlyWait(WebDriverConfig.getInstance()
+                .getImplicitWaitTime(), TimeUnit.SECONDS);
+        webDriverWait = new WebDriverWait(webDriver, WebDriverConfig.getInstance().getExplicitWaitTime());
     }
 
     /**
