@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
  */
 public final class WebDriverManager {
     private static WebDriver webDriver;
-    private static WebDriverManager instance = null;
+    private static WebDriverManager instance;
     private static WebDriverWait webDriverWait;
 
     /**

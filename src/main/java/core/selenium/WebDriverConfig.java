@@ -13,7 +13,7 @@ import java.util.Properties;
  * @version 0.0.1
  */
 public final class WebDriverConfig {
-    private static WebDriverConfig instance = null;
+    private static WebDriverConfig instance;
     private static Properties properties;
     private static InputStream inputProperties;
     private static final String BROWSER = "browser";
