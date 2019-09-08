@@ -2,15 +2,27 @@ package core.selenium;
 
 import core.selenium.webdrivers.Chrome;
 import core.selenium.webdrivers.Firefox;
-import core.selenium.webdrivers.Browser;
+import core.selenium.webdrivers.BrowserType;
 import org.openqa.selenium.WebDriver;
 
+/**
+ * WebDriverFactory class, this class initializes a browser according to the type it receives.
+ *
+ * @author Maday Alcala
+ * @version 0.0.1
+ */
 public final class WebDriverFactory {
     private static WebDriver webDriver;
-    public static final String MESSAGE_FOR_UNKNOWN_BROWSER = "Unknown browser type";
+    private static final String MESSAGE_FOR_UNKNOWN_BROWSER = "Unknown browser type";
 
-    public static WebDriver getWebDriver(Browser browser) {
-        switch (browser) {
+    /**
+     * This method returns the initialized web driver according to the name of the browser it receives.
+     *
+     * @param browserType 'browserType', this parameter indicates the type of browser to be initialized.
+     * @return webDriver, an initialized browser.
+     */
+    public static WebDriver getWebDriver(BrowserType browserType) {
+        switch (browserType) {
             case CHROME:
                 webDriver = new Chrome().init();
                 break;
