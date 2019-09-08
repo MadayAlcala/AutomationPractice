@@ -1,7 +1,7 @@
 package AutomationPractice.ui.pages;
 
 /**
- * BasePage class.
+ * PageTransporter class.
  *
  * @author Maday Alcala
  * @version 0.0.1

@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 /**
- * BasePage class, this class is the intermediary between the 'WebDriverManager' class and the pages.
+ * LoginPage class, this class is the intermediary between the 'WebDriverManager' class and the pages.
  *
  * @author Maday Alcala
  * @version 0.0.1
@@ -88,5 +88,3 @@ public class LoginPage extends BasePage {
         driver.quit();
     }
 }
-
-

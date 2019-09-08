@@ -6,7 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 /**
- * Firefox, this class is in charge of initializing the specific characteristics of Chrome.
+ * Chrome, this class is in charge of initializing the specific characteristics of Chrome.
  *
  * @author Maday Alcala
  * @version 0.0.1
