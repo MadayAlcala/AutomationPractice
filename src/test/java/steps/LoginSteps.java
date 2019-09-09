@@ -1,12 +1,12 @@
 package steps;
 
+import AutomationPractice.ui.pages.HomePage;
 import AutomationPractice.ui.pages.LoginPage;
 import AutomationPractice.ui.pages.PageTransporter;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
 
 /**
  * LoginSteps class, here are implemented the steps for the login of users.
@@ -16,14 +16,6 @@ import org.testng.annotations.AfterClass;
  */
 public class LoginSteps {
     private LoginPage loginPage;
-
-    /**
-     * This method will be executed after class.
-     */
-    @AfterClass
-    public void after() {
-        loginPage.quitWindow();
-    }
 
     /**
      * This method is in charge of opening the page.
@@ -40,7 +32,7 @@ public class LoginSteps {
      * @param password 'password', represents the password according to the emal.
      */
     @When("^I fill the form with \"([^\"]*)\" and \"([^\"]*)\"$")
-    public void fillLogInForm(String email, String password) {
+    public void fillLogInForm(final String email, final String password) {
         loginPage.login(email, password);
     }
 
@@ -49,7 +41,8 @@ public class LoginSteps {
      */
     @Then("Username should appear in the left panel")
     public void verifyUserName() {
-        Assert.assertEquals(loginPage.getText(), "Maday Alcala",
+        HomePage userName = new HomePage();
+        Assert.assertEquals(userName.getUserNameText(), "Maday Alcala",
                 "It is not the same text");
     }
 }

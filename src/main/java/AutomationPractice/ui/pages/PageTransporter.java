@@ -45,7 +45,7 @@ public class PageTransporter {
      *
      * @param url The parameter url defines a input url.
      */
-    public void goToUrl(String url) {
+    public void goToUrl(final String url) {
         webDriver.navigate().to(url);
     }
 

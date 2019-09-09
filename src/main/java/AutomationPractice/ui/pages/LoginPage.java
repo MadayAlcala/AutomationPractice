@@ -25,9 +25,6 @@ public class LoginPage extends BasePage {
     @FindBy(css = "#SubmitLogin > span")
     private WebElement loginBtn;
 
-    @FindBy(css = ".account > span")
-    private WebElement userNameText;
-
     /**
      * This method is in charge of the login to the application.
      *
@@ -71,21 +68,5 @@ public class LoginPage extends BasePage {
      */
     private void clickSignInBtn() {
         loginBtn.click();
-    }
-
-    /**
-     * This method recovers the text of the username.
-     *
-     * @return value, that represent the username text.
-     */
-    public String getText() {
-        return userNameText.getText();
-    }
-
-    /**
-     * This method closes the driver.
-     */
-    public void quitWindow() {
-        driver.quit();
     }
 }

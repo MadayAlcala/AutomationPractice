@@ -1,6 +1,7 @@
 package core.selenium;
 
 import core.selenium.webdrivers.BrowserType;
+import core.utils.Log;
 
 import java.io.FileInputStream;
 import java.io.InputStream;
@@ -49,7 +50,7 @@ public final class WebDriverConfig {
             properties = new Properties();
             properties.load(inputProperties);
         } catch (Exception e) {
-            System.out.println("Something went wrong.");
+            Log.getInstance().getLog().error(e + "Something went wrong.");
         }
     }
 

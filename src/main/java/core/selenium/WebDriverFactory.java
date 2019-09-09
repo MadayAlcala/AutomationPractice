@@ -21,7 +21,7 @@ public final class WebDriverFactory {
      * @param browserType 'browserType', this parameter indicates the type of browser to be initialized.
      * @return webDriver, an initialized browser.
      */
-    public static WebDriver getWebDriver(BrowserType browserType) {
+    public static WebDriver getWebDriver(final BrowserType browserType) {
         switch (browserType) {
             case CHROME:
                 webDriver = new Chrome().init();
