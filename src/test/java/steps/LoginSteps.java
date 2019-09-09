@@ -1,10 +1,12 @@
 package steps;
 
 import AutomationPractice.ui.pages.LoginPage;
+import AutomationPractice.ui.pages.PageTransporter;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 
 /**
  * LoginSteps class, here are implemented the steps for the login of users.
@@ -13,26 +15,32 @@ import org.testng.Assert;
  * @version 0.0.1
  */
 public class LoginSteps {
-    private static  LoginPage loginPage;
+    private LoginPage loginPage;
+
+    /**
+     * This method will be executed after class.
+     */
+    @AfterClass
+    public void after() {
+        loginPage.quitWindow();
+    }
 
     /**
      * This method is in charge of opening the page.
      */
     @Given("I visit the login page")
     public void initializeLoginPage() {
-        loginPage = new LoginPage();
+        loginPage = PageTransporter.getInstance().goToUrlLogin();
     }
 
     /**
      * This method fills in the user data to be able to log in.
      *
-     * @param email 'email', represents the email of an user.
+     * @param email    'email', represents the email of an user.
      * @param password 'password', represents the password according to the emal.
      */
     @When("^I fill the form with \"([^\"]*)\" and \"([^\"]*)\"$")
     public void fillLogInForm(String email, String password) {
-        email = "smilingly3@gmail.com";
-        password = "tresconejos";
         loginPage.login(email, password);
     }
 
@@ -43,6 +51,5 @@ public class LoginSteps {
     public void verifyUserName() {
         Assert.assertEquals(loginPage.getText(), "Maday Alcala",
                 "It is not the same text");
-        loginPage.quitWindow();
     }
 }

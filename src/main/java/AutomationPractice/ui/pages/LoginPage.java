@@ -1,6 +1,7 @@
 package AutomationPractice.ui.pages;
 
 import AutomationPractice.ui.BasePage;
+import AutomationPractice.ui.Common.ReadAppFile;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -16,7 +17,7 @@ public class LoginPage extends BasePage {
     private WebElement signInLink;
 
     @FindBy(id = "email")
-    private WebElement userNameTxtb;
+    private WebElement emailTxtb;
 
     @FindBy(id = "passwd")
     private WebElement passwordTxtb;
@@ -35,25 +36,25 @@ public class LoginPage extends BasePage {
      */
     public void login(final String email, final String password) {
         clickSignInLink();
-        setUserName(email);
-        setPassword(password);
+        setEmail(ReadAppFile.getInstance().getEmail());
+        setPassword(ReadAppFile.getInstance().getPassword());
         clickSignInBtn();
     }
 
     /**
      * This method is in charge of clicking on the sign in textLink.
      */
-    public void clickSignInLink() {
+    private void clickSignInLink() {
         signInLink.click();
     }
 
     /**
      * This method sets the username in the text box of the login form.
      *
-     * @param userName 'username', that represent a valid email.
+     * @param email 'username', that represent a valid email.
      */
-    public void setUserName(final String userName) {
-        userNameTxtb.sendKeys(userName);
+    private void setEmail(final String email) {
+        emailTxtb.sendKeys(email);
     }
 
     /**
@@ -61,14 +62,14 @@ public class LoginPage extends BasePage {
      *
      * @param password 'password', that represent a valid password for the email.
      */
-    public void setPassword(final String password) {
+    private void setPassword(final String password) {
         passwordTxtb.sendKeys(password);
     }
 
     /**
      * This method is in charge of clicking on the sign up button.
      */
-    public void clickSignInBtn() {
+    private void clickSignInBtn() {
         loginBtn.click();
     }
 
