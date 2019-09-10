@@ -20,4 +20,11 @@ public abstract class BasePage {
         this.driver = WebDriverManager.getInstance().getWebDriver();
         PageFactory.initElements(driver, this);
     }
+
+    /**
+     * This method closes the driver.
+     */
+    public void quitWindow() {
+        driver.quit();
+    }
 }

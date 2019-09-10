@@ -5,9 +5,12 @@ build
 .gradle/
 out/
 
+#Report file
+target/
 
 # Log file
 *.log
+log/
 
 # BlueJ files
 *.ctxt

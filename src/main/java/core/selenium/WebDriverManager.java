@@ -41,7 +41,6 @@ public final class WebDriverManager {
      */
     private void initialize() {
         this.webDriver = WebDriverFactory.getWebDriver(WebDriverConfig.getInstance().getBrowser());
-        this.webDriver.get("http://automationpractice.com/index.php");
         this.webDriver.manage().window().maximize();
         this.webDriver.manage().timeouts().implicitlyWait(WebDriverConfig.getInstance()
                 .getImplicitWaitTime(), TimeUnit.SECONDS);
@@ -49,11 +48,20 @@ public final class WebDriverManager {
     }
 
     /**
-     * This method is in charge of return an instance if WebDriverManager.
+     * This method is in charge of return an instance of WebDriverManager.
      *
      * @return webDriver, that is an instance of a browser.
      */
     public WebDriver getWebDriver() {
         return webDriver;
+    }
+
+    /**
+     * This method is in charge of return an instance of WebDriverWait.
+     *
+     * @return webDriverWait, that is an instance of a Wait.
+     */
+    public WebDriverWait getWebDriverWait() {
+        return webDriverWait;
     }
 }
