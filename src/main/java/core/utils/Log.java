@@ -12,7 +12,7 @@ import org.apache.log4j.PropertyConfigurator;
  */
 public final class Log {
     private static final String LOG4J_PROPERTIES = "log4j.properties";
-    private static Log instance = null;
+    private static Log instance;
     private static Logger log = Logger.getLogger(Log.class);
 
     /**
