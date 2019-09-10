@@ -1,5 +1,7 @@
 package AutomationPractice.ui.Common;
 
+import core.utils.Log;
+
 import java.io.FileInputStream;
 import java.util.Properties;
 
@@ -14,43 +16,40 @@ public final class ReadAppFile {
     private static final String EMAIL = "email";
     private static final String PASSWORD = "password";
     private static final String PROPERTIES_FILE = "automationpractice.properties";
-    private static ReadAppFile readAppProperties;
+    private static ReadAppFile instance;
     private Properties properties;
 
     /**
-     * this method is used for initializes the variables.
+     * This is the constructor and is used for initializes the variables.
      */
     private ReadAppFile() {
         readConfigurationFile();
     }
 
     /**
-     * This method reads the file 'gradle.properties' ans return its values through the object 'properties'.
-     *
-     * @return an object 'properties' with wich you can get data from 'gradle.properties'.
+     * This method reads the file 'automationpractice.properties'.
      */
-    private Properties readConfigurationFile() {
+    private void readConfigurationFile() {
         FileInputStream inputStream;
         try {
             inputStream = new FileInputStream(PROPERTIES_FILE);
             properties = new Properties();
             properties.load(inputStream);
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.getInstance().getLog().error(e + "Something went wrong.");
         }
-        return properties;
     }
 
     /**
-     * This method ensure that only one instance is created according to the build pattern.
+     * This method ensure that only one instance is created according to the Singleton pattern.
      *
-     * @return an instance of 'ReadAppProperties' type.
+     * @return an instance of 'ReadAppFile' type.
      */
     public static ReadAppFile getInstance() {
-        if (readAppProperties == null) {
-            readAppProperties = new ReadAppFile();
+        if (instance == null) {
+            instance = new ReadAppFile();
         }
-        return readAppProperties;
+        return instance;
     }
 
     /**
@@ -63,7 +62,7 @@ public final class ReadAppFile {
     }
 
     /**
-     * This method is used for get the email of login in page.
+     * This method is used for get the email to login in page.
      *
      * @return a string with the email.
      */
@@ -72,13 +71,11 @@ public final class ReadAppFile {
     }
 
     /**
-     * This method is used for get the password of login in page.
+     * This method is used for get the password to login in page.
      *
      * @return a string with the password.
      */
     public String getPassword() {
         return properties.getProperty(PASSWORD);
     }
-
-
 }

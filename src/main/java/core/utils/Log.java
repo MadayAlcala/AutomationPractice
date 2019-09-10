@@ -5,7 +5,7 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
 /**
- * This class is used for testing 'ReadConfiguration' class.
+ * This class is used to generate logs.
  *
  * @author Maday Alcala Cuba.
  * @version 0.0.1
