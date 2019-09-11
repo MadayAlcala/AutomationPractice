@@ -50,8 +50,8 @@ public final class WebDriverConfig {
             properties = new Properties();
             properties.load(inputProperties);
         } catch (Exception e) {
-            Log.getInstance().getLog().error(e + "Something went wrong.");
-            throw new NullPointerException("Something went wrong." + e);
+            Log.getInstance().getLog().error(e + "File not found.");
+            throw new NullPointerException("File not found." + e);
         }
     }
 

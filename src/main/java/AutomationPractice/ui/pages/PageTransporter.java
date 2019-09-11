@@ -10,8 +10,14 @@ import org.openqa.selenium.WebDriver;
  * @author Maday Alcala
  * @version 0.0.1
  */
-public class PageTransporter {
+public final class PageTransporter {
     private static WebDriver webDriver;
+
+    /**
+     * This is the empty constructor according to checkstyle.
+     */
+    private PageTransporter() {
+    }
 
     /**
      * This method is used for go to a page.

@@ -18,8 +18,14 @@ import static core.selenium.webdrivers.BrowserType.FIREFOX;
  * @author Maday Alcala
  * @version 0.0.1
  */
-public class WebDriverFactory {
+public final class WebDriverFactory {
     private static Map<BrowserType, IBrowser> map;
+
+    /**
+     * This is the empty constructor according to checkstyle.
+     */
+    private WebDriverFactory() {
+    }
 
     /**
      * This method returns the initialized web driver according to the name of the browser it receives.

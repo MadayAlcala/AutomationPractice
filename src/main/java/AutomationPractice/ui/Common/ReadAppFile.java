@@ -35,8 +35,8 @@ public final class ReadAppFile {
             properties = new Properties();
             properties.load(inputStream);
         } catch (Exception e) {
-            Log.getInstance().getLog().error(e + "Something went wrong.");
-            throw new NullPointerException("Something went wrong." + e);
+            Log.getInstance().getLog().error(e + "File not found.");
+            throw new NullPointerException("File not found." + e);
         }
     }
 

@@ -32,6 +32,6 @@ public class AddressSteps {
      */
     @When("^I update a \"([^\"]*)\" of the address$")
     public void updateUserName(final String userName) {
-        accountPage.address("Alicia");
+        accountPage.address("SomeName");
     }
 }
