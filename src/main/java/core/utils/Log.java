@@ -19,7 +19,15 @@ public final class Log {
      * Private constructor for the Singleton pattern.
      */
     private Log() {
-        super();
+        initialize();
+    }
+
+    /**
+     * This method initializes the logger characteristics.
+     */
+    public void initialize() {
+        PropertyConfigurator.configure(LOG4J_PROPERTIES);
+        log.setLevel(Level.ALL);
     }
 
     /**
@@ -31,8 +39,6 @@ public final class Log {
     public static Log getInstance() {
         if (instance == null) {
             instance = new Log();
-            PropertyConfigurator.configure(LOG4J_PROPERTIES);
-            log.setLevel(Level.ALL);
         }
         return instance;
     }

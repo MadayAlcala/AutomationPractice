@@ -51,6 +51,7 @@ public final class WebDriverConfig {
             properties.load(inputProperties);
         } catch (Exception e) {
             Log.getInstance().getLog().error(e + "Something went wrong.");
+            throw new NullPointerException("Something went wrong." + e);
         }
     }
 

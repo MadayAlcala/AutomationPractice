@@ -11,51 +11,15 @@ import org.openqa.selenium.WebDriver;
  * @version 0.0.1
  */
 public class PageTransporter {
-    private static PageTransporter pageTransporter;
-    private WebDriver webDriver;
-
-    /**
-     * This method is used for initializes the variables.
-     */
-    public PageTransporter() {
-        initialize();
-    }
-
-    /**
-     * This method is used for initializes the variables.
-     */
-    public void initialize() {
-        webDriver = WebDriverManager.getInstance().getWebDriver();
-    }
-
-    /**
-     * This method is used for instantiate the PageTransporter class.
-     *
-     * @return a pageTransporter.
-     */
-    public static PageTransporter getInstance() {
-        if (pageTransporter == null) {
-            pageTransporter = new PageTransporter();
-        }
-        return pageTransporter;
-    }
+    private static WebDriver webDriver;
 
     /**
      * This method is used for go to a page.
      *
      * @param url The parameter url defines a input url.
      */
-    public void goToUrl(final String url) {
-        webDriver.navigate().to(url);
-    }
-
-    /**
-     * This method is used for go to a page login.
-     *
-     * @return a LoginPage.
-     */
-    public LoginPage goToUrlLogin() {
-        goToUrl(ReadAppFile.getInstance().getUrlLogin());
-        return new LoginPage();
+    public static void goToUrl(final String url) {
+        webDriver = WebDriverManager.getInstance().getWebDriver();
+        webDriver.navigate().to(ReadAppFile.getInstance().getUrl(url));
     }
 }

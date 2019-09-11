@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 /**
- * LoginPage class, this class is the intermediary between the 'WebDriverManager' class and the pages.
+ * LoginPage class, this class is in charge of the login elements.
  *
  * @author Maday Alcala
  * @version 0.0.1
@@ -28,7 +28,7 @@ public class LoginPage extends BasePage {
     /**
      * This method is in charge of the login to the application.
      *
-     * @param email 'email', it indicates the email with which the login will be carried out.
+     * @param email    'email', it indicates the email with which the login will be carried out.
      * @param password 'password', it indicates the password with which the login will be carried out.
      */
     public void login(final String email, final String password) {
