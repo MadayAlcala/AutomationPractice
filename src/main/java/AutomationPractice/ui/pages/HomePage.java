@@ -14,6 +14,9 @@ public class HomePage extends BasePage {
     @FindBy(css = ".account > span")
     private WebElement userNameText;
 
+    @FindBy(linkText = "Sign out")
+    private WebElement signOutLink;
+
     /**
      * This method recovers the text of the username.
      *
@@ -21,5 +24,21 @@ public class HomePage extends BasePage {
      */
     public String getUserNameText() {
         return userNameText.getText();
+    }
+
+    /**
+     * This method is in charge of clicking on the sign out button.
+     */
+    public void clickSignOutLink() {
+        signOutLink.click();
+    }
+
+    /**
+     * This method recovers the text of the signOutLink.
+     *
+     * @return signOutLink, that represent the signOutLink text.
+     */
+    public String signOutLink() {
+        return signOutLink.getText();
     }
 }

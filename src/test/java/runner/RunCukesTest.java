@@ -2,6 +2,7 @@ package runner;
 
 import AutomationPractice.ui.Report.Report;
 import core.selenium.WebDriverManager;
+
 import cucumber.api.CucumberOptions;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
 import org.testng.annotations.AfterTest;
@@ -14,7 +15,7 @@ import org.testng.annotations.AfterTest;
  */
 @CucumberOptions(
         plugin = {"pretty", "html:target/cucumber", "json:target/cucumber.json"},
-        glue = {"steps"},
+        glue = {"steps", "hook"},
         features = {"src/test/resources/feature"})
 
 public class RunCukesTest extends AbstractTestNGCucumberTests {

@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 /**
- * LoginPage class, this class is the intermediary between the 'WebDriverManager' class and the pages.
+ * LoginPage class, this class is in charge of the login elements.
  *
  * @author Maday Alcala
  * @version 0.0.1

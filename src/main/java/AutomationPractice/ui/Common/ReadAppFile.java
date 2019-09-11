@@ -6,13 +6,12 @@ import java.io.FileInputStream;
 import java.util.Properties;
 
 /**
- * This class is used for implement the read og the properties file.
+ * ReadAppFile, this class is used for implement the read og the properties file.
  *
  * @author Maday Alcala.
  * @version 0.0.1
  */
 public final class ReadAppFile {
-    private static final String URL_LOGIN = "url_login";
     private static final String EMAIL = "email";
     private static final String PASSWORD = "password";
     private static final String PROPERTIES_FILE = "automationpractice.properties";
@@ -36,7 +35,8 @@ public final class ReadAppFile {
             properties = new Properties();
             properties.load(inputStream);
         } catch (Exception e) {
-            Log.getInstance().getLog().error(e + "Something went wrong.");
+            Log.getInstance().getLog().error(e + "File not found.");
+            throw new NullPointerException("File not found." + e);
         }
     }
 
@@ -55,14 +55,15 @@ public final class ReadAppFile {
     /**
      * This method is used for get the url of login in page.
      *
+     * @param url is the parameter that indicates what type of url is to be read from 'automation.properties'.
      * @return a string with the url.
      */
-    public String getUrlLogin() {
-        return properties.getProperty(URL_LOGIN);
+    public String getUrl(final String url) {
+        return properties.getProperty(url);
     }
 
     /**
-     * This method is used for get the email to login in page.
+     * This method is used for get the email of login in page.
      *
      * @return a string with the email.
      */

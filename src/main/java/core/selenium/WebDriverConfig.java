@@ -44,13 +44,14 @@ public final class WebDriverConfig {
      * This method reads browser properties and initializes the basic browser characteristics.
      */
     public void initialize() {
-         InputStream inputProperties;
+        InputStream inputProperties;
         try {
             inputProperties = new FileInputStream("gradle.properties");
             properties = new Properties();
             properties.load(inputProperties);
         } catch (Exception e) {
-            Log.getInstance().getLog().error(e + "Something went wrong.");
+            Log.getInstance().getLog().error(e + "File not found.");
+            throw new NullPointerException("File not found." + e);
         }
     }
 

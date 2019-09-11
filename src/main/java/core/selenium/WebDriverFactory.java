@@ -3,7 +3,14 @@ package core.selenium;
 import core.selenium.webdrivers.Chrome;
 import core.selenium.webdrivers.Firefox;
 import core.selenium.webdrivers.BrowserType;
+import core.selenium.webdrivers.IBrowser;
 import org.openqa.selenium.WebDriver;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import static core.selenium.webdrivers.BrowserType.CHROME;
+import static core.selenium.webdrivers.BrowserType.FIREFOX;
 
 /**
  * WebDriverFactory class, this class initializes a browser according to the type it receives.
@@ -12,8 +19,12 @@ import org.openqa.selenium.WebDriver;
  * @version 0.0.1
  */
 public final class WebDriverFactory {
-    private static WebDriver webDriver;
-    private static final String MESSAGE_FOR_UNKNOWN_BROWSER = "Unknown browser type";
+
+    /**
+     * This is the empty constructor according to checkstyle.
+     */
+    private WebDriverFactory() {
+    }
 
     /**
      * This method returns the initialized web driver according to the name of the browser it receives.
@@ -22,16 +33,9 @@ public final class WebDriverFactory {
      * @return webDriver, an initialized browser.
      */
     public static WebDriver getWebDriver(final BrowserType browserType) {
-        switch (browserType) {
-            case CHROME:
-                webDriver = new Chrome().init();
-                break;
-            case FIREFOX:
-                webDriver = new Firefox().init();
-                break;
-            default:
-                throw new RuntimeException(MESSAGE_FOR_UNKNOWN_BROWSER);
-        }
-        return webDriver;
+        Map<BrowserType, IBrowser> map = new HashMap<>();
+        map.put(CHROME, new Chrome());
+        map.put(FIREFOX, new Firefox());
+        return map.get(browserType).initDriver();
     }
 }

@@ -11,14 +11,15 @@ import org.openqa.selenium.firefox.FirefoxOptions;
  * @author Maday Alcala
  * @version 0.0.1
  */
-public class Firefox {
+public class Firefox implements IBrowser {
 
     /**
      * Initializes Firefox driver.
      *
      * @return a FirefoxDriver.
      */
-    public WebDriver init() {
+    @Override
+    public WebDriver initDriver() {
         FirefoxDriverManager.getInstance().version("0.24.0").setup();
         FirefoxOptions firefoxOptions = new FirefoxOptions();
         return new FirefoxDriver(firefoxOptions);
