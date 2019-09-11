@@ -19,7 +19,6 @@ public class LoginSteps {
     private LoginPage loginPage;
     private HomePage homePage;
 
-
     /**
      * This method after executes after every scenario, 'sign out' the page.
      */

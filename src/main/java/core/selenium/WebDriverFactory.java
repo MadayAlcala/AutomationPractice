@@ -19,7 +19,6 @@ import static core.selenium.webdrivers.BrowserType.FIREFOX;
  * @version 0.0.1
  */
 public final class WebDriverFactory {
-    private static Map<BrowserType, IBrowser> map;
 
     /**
      * This is the empty constructor according to checkstyle.
@@ -34,7 +33,7 @@ public final class WebDriverFactory {
      * @return webDriver, an initialized browser.
      */
     public static WebDriver getWebDriver(final BrowserType browserType) {
-        map = new HashMap<>();
+        Map<BrowserType, IBrowser> map = new HashMap<>();
         map.put(CHROME, new Chrome());
         map.put(FIREFOX, new Firefox());
         return map.get(browserType).initDriver();

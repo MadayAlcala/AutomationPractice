@@ -28,7 +28,7 @@ public class LoginPage extends BasePage {
     /**
      * This method is in charge of the login to the application.
      *
-     * @param email    'email', it indicates the email with which the login will be carried out.
+     * @param email 'email', it indicates the email with which the login will be carried out.
      * @param password 'password', it indicates the password with which the login will be carried out.
      */
     public void login(final String email, final String password) {
