@@ -4,6 +4,7 @@ import core.selenium.webdrivers.BrowserType;
 import core.utils.Log;
 
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
@@ -44,14 +45,12 @@ public final class WebDriverConfig {
      * This method reads browser properties and initializes the basic browser characteristics.
      */
     public void initialize() {
-        InputStream inputProperties;
-        try {
-            inputProperties = new FileInputStream("gradle.properties");
+        try (InputStream inputProperties = new FileInputStream("gradle.properties")) {
             properties = new Properties();
             properties.load(inputProperties);
-        } catch (Exception e) {
+        } catch (IOException e) {
             Log.getInstance().getLog().error(e + "File not found.");
-            throw new NullPointerException("File not found." + e);
+            throw new RuntimeException("File not found." + e);
         }
     }
 

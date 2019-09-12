@@ -1,9 +1,15 @@
 package steps;
 
+import AutomationPractice.ui.entities.Context;
+import AutomationPractice.ui.pages.AddressFormAbstract;
 import AutomationPractice.ui.pages.AddressPage;
 import AutomationPractice.ui.pages.PageTransporter;
 import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import org.testng.Assert;
+
+import java.util.Map;
 
 /**
  * AddressSteps class, here are implemented the steps for the address of users.
@@ -12,7 +18,17 @@ import cucumber.api.java.en.When;
  * @version 0.0.1
  */
 public class AddressSteps {
-    private AddressPage accountPage;
+    private AddressPage addressPage;
+    private Context context;
+
+    /**
+     * This is the constructor.
+     *
+     * @param context context.
+     */
+    public AddressSteps(final Context context) {
+        this.context = context;
+    }
 
     /**
      * This method is in charge of opening the address page.
@@ -22,16 +38,28 @@ public class AddressSteps {
     @Given("^I go to update \"([^\"]*)\" form$")
     public void goToAddressPage(final String url) {
         PageTransporter.goToUrl(url);
-        accountPage = new AddressPage();
+        addressPage = new AddressPage();
     }
 
     /**
-     * This method fills a field of the address to be able to update it.
+     * This method fills the form address to be able to create it.
      *
-     * @param userName that indicates de type of field.
+     * @param addressMap that indicates all the fields.
      */
-    @When("^I update a \"([^\"]*)\" of the address$")
-    public void updateUserName(final String userName) {
-        accountPage.address("SomeName");
+    @When("^I create a new Address with the following information$")
+    public void crateNewAddress(final Map<String, String> addressMap) {
+        AddressFormAbstract addressForm = new AddressPage();
+        context.getAddress().setAccountInformation(addressMap);
+        addressForm.setAccountInformation(addressMap);
+        addressPage.clickSubmitBtn();
+    }
+
+    /**
+     * This method verifies the correct address creation.
+     */
+    @Then("^the address information should be displayed in the Address page$")
+    public void verifyTheAddressInformation() {
+        Assert.assertEquals(addressPage.getHeadingTxt(), context.getAddress().getAlias().toUpperCase());
+        Assert.assertEquals(addressPage.getPhoneMobileTxt(), context.getAddress().getPhoneMobile());
     }
 }

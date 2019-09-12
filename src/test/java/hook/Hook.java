@@ -1,5 +1,6 @@
 package hook;
 
+import AutomationPractice.ui.pages.AddressPage;
 import core.selenium.WebDriverManager;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
@@ -31,8 +32,17 @@ public class Hook {
     @After
     public void tearDown(final Scenario scenario) {
         if (scenario.isFailed()) {
-            final byte[] screenshot = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.BYTES);
+            byte[] screenshot = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.BYTES);
             scenario.embed(screenshot, "image/png");
         }
+    }
+
+    /**
+     * This method is for delete an address.
+     */
+    @After("@DeleteAddress")
+    public void deleteContact() {
+        AddressPage addressPage = new AddressPage();
+        addressPage.deleteAddress();
     }
 }

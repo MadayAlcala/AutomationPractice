@@ -1,6 +1,6 @@
 package AutomationPractice.ui.pages;
 
-import AutomationPractice.ui.BasePage;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -10,7 +10,7 @@ import org.openqa.selenium.support.FindBy;
  * @author Maday Alcala
  * @version 0.0.1
  */
-public class AddressPage extends BasePage {
+public class AddressPage extends AddressFormAbstract {
     @FindBy(id = "firstname")
     private WebElement firstnametxtField;
 
@@ -53,20 +53,41 @@ public class AddressPage extends BasePage {
     @FindBy(css = "#submitAddress > span")
     private WebElement submitBtn;
 
+    @FindBy(css = ".last_item .page-subheading")
+    private WebElement heading;
+
+    @FindBy(css = ".last_item .address_phone_mobile")
+    private WebElement phoneMobile;
+
     /**
-     * This method is in charge of the change address fields of the application.
-     *
-     * @param field 'field', it indicates the field with which the address update will be carried out.
+     * This method return the name of the address header.
+     * @return heading of the address.
      */
-    public void address(final String field) {
-        setFirstName(field);
-        clickSubmitBtn();
+    public String getHeadingTxt() {
+        return heading.getText();
+    }
+
+    /**
+     * This method return the name of the mobile phone header.
+     * @return text of the mobile phone.
+     */
+    public String getPhoneMobileTxt() {
+        return phoneMobile.getText();
+    }
+
+    /**
+     * This method delete the last address created.
+     */
+    public void deleteAddress() {
+        driver.findElement(By.cssSelector(".last_item .btn:nth-child(2) > span")).click();
+        driver.switchTo().alert().accept();
     }
 
     /**
      * This method is in charge of clicking on the submit button.
      */
-    private void clickSubmitBtn() {
+    @Override
+    public void clickSubmitBtn() {
         submitBtn.click();
     }
 
@@ -75,7 +96,8 @@ public class AddressPage extends BasePage {
      *
      * @param firstName 'firstName', that represent an firstName.
      */
-    private void setFirstName(final String firstName) {
+    @Override
+    public void setFirstName(final String firstName) {
         firstnametxtField.clear();
         firstnametxtField.sendKeys(firstName);
     }
@@ -85,7 +107,9 @@ public class AddressPage extends BasePage {
      *
      * @param lastName 'lastName', that represent an lastName.
      */
-    private void setLastName(final String lastName) {
+    @Override
+    public void setLastName(final String lastName) {
+        lastnametxtField.clear();
         lastnametxtField.sendKeys(lastName);
     }
 
@@ -94,7 +118,9 @@ public class AddressPage extends BasePage {
      *
      * @param company 'company', that represent an company.
      */
-    private void setCompany(final String company) {
+    @Override
+    public void setCompany(final String company) {
+        companytxtField.clear();
         companytxtField.sendKeys(company);
     }
 
@@ -103,7 +129,8 @@ public class AddressPage extends BasePage {
      *
      * @param address1 'address1', that represent an address1.
      */
-    private void setAddress1(final String address1) {
+    @Override
+    public void setAddress1(final String address1) {
         address1txtField.sendKeys(address1);
     }
 
@@ -112,7 +139,8 @@ public class AddressPage extends BasePage {
      *
      * @param address2 'address2', that represent an address2.
      */
-    private void setAddress2(final String address2) {
+    @Override
+    public void setAddress2(final String address2) {
         address2txtField.sendKeys(address2);
     }
 
@@ -121,7 +149,8 @@ public class AddressPage extends BasePage {
      *
      * @param city 'city', that represent an city.
      */
-    private void setcity(final String city) {
+    @Override
+    public void setcity(final String city) {
         citytxtField.sendKeys(city);
     }
 
@@ -130,7 +159,8 @@ public class AddressPage extends BasePage {
      *
      * @param state 'state', that represent an state.
      */
-    private void setIdState(final String state) {
+    @Override
+    public void setIdState(final String state) {
         statetxtField.sendKeys(state);
     }
 
@@ -139,7 +169,8 @@ public class AddressPage extends BasePage {
      *
      * @param postCode 'postCode', that represent an postCode.
      */
-    private void setPostCode(final String postCode) {
+    @Override
+    public void setPostCode(final String postCode) {
         postcodetxtField.sendKeys(postCode);
     }
 
@@ -148,7 +179,8 @@ public class AddressPage extends BasePage {
      *
      * @param country 'country', that represent an country.
      */
-    private void setIdCountry(final String country) {
+    @Override
+    public void setIdCountry(final String country) {
         countrytxtField.sendKeys(country);
     }
 
@@ -157,7 +189,8 @@ public class AddressPage extends BasePage {
      *
      * @param phone 'phone', that represent an phone.
      */
-    private void setPhone(final String phone) {
+    @Override
+    public void setPhone(final String phone) {
         phonetxtField.sendKeys(phone);
     }
 
@@ -166,7 +199,8 @@ public class AddressPage extends BasePage {
      *
      * @param phoneMovil 'phoneMovil', that represent an phoneMovil.
      */
-    private void setPhoneMovil(final String phoneMovil) {
+    @Override
+    public void setPhoneMovil(final String phoneMovil) {
         phoneMobiletxtField.sendKeys(phoneMovil);
     }
 
@@ -175,7 +209,8 @@ public class AddressPage extends BasePage {
      *
      * @param other 'other', that represent an other.
      */
-    private void setOther(final String other) {
+    @Override
+    public void setOther(final String other) {
         othertxtField.sendKeys(other);
     }
 
@@ -184,7 +219,9 @@ public class AddressPage extends BasePage {
      *
      * @param alias 'alias', that represent an alias.
      */
-    private void setAlias(final String alias) {
+    @Override
+    public void setAlias(final String alias) {
+        aliastxtField.clear();
         aliastxtField.sendKeys(alias);
     }
 }
