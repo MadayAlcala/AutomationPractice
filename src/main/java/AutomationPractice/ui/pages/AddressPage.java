@@ -79,7 +79,7 @@ public class AddressPage extends AddressFormAbstract {
      * This method delete the last address created.
      */
     public void deleteAddress() {
-        driver.findElement(By.cssSelector(".last_item .btn:nth-child(2) > span")).click();
+        By.cssSelector(".last_item .btn:nth-child(2) > span").findElement(driver).click();
         driver.switchTo().alert().accept();
     }
 

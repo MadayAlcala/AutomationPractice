@@ -4,7 +4,6 @@ Feature: Address
     Given I visit the "login" page
     When I fill the form with "email" and "password"
 
-  @DeleteAddress
   Scenario: Edit the address as registered user
     When I go to update "address" form
     And I create a new Address with the following information
@@ -20,6 +19,5 @@ Feature: Address
       | phone        | 4578962       |
       | phone_mobile | 4578962       |
       | other        | Public        |
-      | alias        | Nuevo10       |
+      | alias        | Nuevito999    |
     Then the address information should be displayed in the Address page
-

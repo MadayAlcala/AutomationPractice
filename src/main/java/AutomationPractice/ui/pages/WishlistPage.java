@@ -21,5 +21,7 @@ public class WishlistPage extends BasePage {
         wishlist.click();
         driver.switchTo().alert().accept();
     }
+
+
 }
 

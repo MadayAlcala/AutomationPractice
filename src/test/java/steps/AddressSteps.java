@@ -49,8 +49,8 @@ public class AddressSteps {
     @When("^I create a new Address with the following information$")
     public void crateNewAddress(final Map<String, String> addressMap) {
         AddressFormAbstract addressForm = new AddressPage();
-        context.getAddress().setAccountInformation(addressMap);
         addressForm.setAccountInformation(addressMap);
+        //context.getAddress().setAccountInformation(addressMap);
         addressPage.clickSubmitBtn();
     }
 

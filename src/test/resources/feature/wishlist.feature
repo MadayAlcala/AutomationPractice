@@ -21,4 +21,3 @@ Feature: WishList
     And I should see "priority" button
     And I should see "save" button
 
-

@@ -31,7 +31,7 @@ public class Address {
      *
      * @return firstname.
      */
-    public String getFirstname() {
+    private String getFirstName() {
         return firstname;
     }
 
@@ -40,7 +40,7 @@ public class Address {
      *
      * @param firstname firstname.
      */
-    public void setFirstname(final String firstname) {
+    private void setFirstname(final String firstname) {
         this.firstname = firstname;
     }
 
@@ -49,7 +49,7 @@ public class Address {
      *
      * @return lastname.
      */
-    public String getLastname() {
+    private String getLastname() {
         return lastname;
     }
 
@@ -58,7 +58,7 @@ public class Address {
      *
      * @param lastname lastname.
      */
-    public void setLastname(final String lastname) {
+    private void setLastname(final String lastname) {
         this.lastname = lastname;
     }
 
@@ -67,7 +67,7 @@ public class Address {
      *
      * @return company.
      */
-    public String getCompany() {
+    private String getCompany() {
         return company;
     }
 
@@ -76,7 +76,7 @@ public class Address {
      *
      * @param company company.
      */
-    public void setCompany(final String company) {
+    private void setCompany(final String company) {
         this.company = company;
     }
 
@@ -85,7 +85,7 @@ public class Address {
      *
      * @return address1.
      */
-    public String getAddress1() {
+    private String getAddress1() {
         return address1;
     }
 
@@ -94,7 +94,7 @@ public class Address {
      *
      * @param address1 address1.
      */
-    public void setAddress1(final String address1) {
+    private void setAddress1(final String address1) {
         this.address1 = address1;
     }
 
@@ -103,7 +103,7 @@ public class Address {
      *
      * @return address2.
      */
-    public String getAddress2() {
+    private String getAddress2() {
         return address2;
     }
 
@@ -112,7 +112,7 @@ public class Address {
      *
      * @param address2 address2.
      */
-    public void setAddress2(final String address2) {
+    private void setAddress2(final String address2) {
         this.address2 = address2;
     }
 
@@ -121,7 +121,7 @@ public class Address {
      *
      * @return city.
      */
-    public String getCity() {
+    private String getCity() {
         return city;
     }
 
@@ -130,7 +130,7 @@ public class Address {
      *
      * @param city city.
      */
-    public void setCity(final String city) {
+    private void setCity(final String city) {
         this.city = city;
     }
 
@@ -139,7 +139,7 @@ public class Address {
      *
      * @return idState.
      */
-    public String getIdState() {
+    private String getIdState() {
         return idState;
     }
 
@@ -148,7 +148,7 @@ public class Address {
      *
      * @param idState idState.
      */
-    public void setIdState(final String idState) {
+    private void setIdState(final String idState) {
         this.idState = idState;
     }
 
@@ -157,7 +157,7 @@ public class Address {
      *
      * @return postcode.
      */
-    public String getPostcode() {
+    private String getPostcode() {
         return postcode;
     }
 
@@ -166,7 +166,7 @@ public class Address {
      *
      * @param postcode postcode.
      */
-    public void setPostcode(final String postcode) {
+    private void setPostcode(final String postcode) {
         this.postcode = postcode;
     }
 
@@ -175,7 +175,7 @@ public class Address {
      *
      * @return idCountry.
      */
-    public String getIdCountry() {
+    private String getIdCountry() {
         return idCountry;
     }
 
@@ -184,7 +184,7 @@ public class Address {
      *
      * @param idCountry idCountry.
      */
-    public void setIdCountry(final String idCountry) {
+    private void setIdCountry(final String idCountry) {
         this.idCountry = idCountry;
     }
 
@@ -193,7 +193,7 @@ public class Address {
      *
      * @return phone.
      */
-    public String getPhone() {
+    private String getPhone() {
         return phone;
     }
 
@@ -202,7 +202,7 @@ public class Address {
      *
      * @param phone phone.
      */
-    public void setPhone(final String phone) {
+    private void setPhone(final String phone) {
         this.phone = phone;
     }
 
@@ -220,7 +220,7 @@ public class Address {
      *
      * @param phoneMobile phoneMobile.
      */
-    public void setPhoneMobile(final String phoneMobile) {
+    private void setPhoneMobile(final String phoneMobile) {
         this.phoneMobile = phoneMobile;
     }
 
@@ -229,7 +229,7 @@ public class Address {
      *
      * @return other.
      */
-    public String getOther() {
+    private String getOther() {
         return other;
     }
 
@@ -238,7 +238,7 @@ public class Address {
      *
      * @param other other.
      */
-    public void setOther(final String other) {
+    private void setOther(final String other) {
         this.other = other;
     }
 
@@ -256,7 +256,7 @@ public class Address {
      *
      * @param alias alias.
      */
-    public void setAlias(final String alias) {
+    private void setAlias(final String alias) {
         this.alias = alias;
     }
 
@@ -284,11 +284,11 @@ public class Address {
         strategyMap.put("address1", () -> setAddress1(accountMap.get("address1")));
         strategyMap.put("address2", () -> setAddress2(accountMap.get("address2")));
         strategyMap.put("city", () -> setCity(accountMap.get("city")));
-        strategyMap.put("idState", () -> setIdState(accountMap.get("idState")));
+        strategyMap.put("id_state", () -> setIdState(accountMap.get("id_state")));
         strategyMap.put("postcode", () -> setPostcode(accountMap.get("postcode")));
-        strategyMap.put("idCountry", () -> setIdCountry(accountMap.get("idCountry")));
+        strategyMap.put("id_country", () -> setIdCountry(accountMap.get("id_country")));
         strategyMap.put("phone", () -> setPhone(accountMap.get("phone")));
-        strategyMap.put("phoneMobile", () -> setPhoneMobile(accountMap.get("phoneMobile")));
+        strategyMap.put("phone_mobile", () -> setPhoneMobile(accountMap.get("phone_mobile")));
         strategyMap.put("other", () -> setOther(accountMap.get("other")));
         strategyMap.put("alias", () -> setAlias(accountMap.get("alias")));
         return strategyMap;
