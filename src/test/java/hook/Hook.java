@@ -1,5 +1,6 @@
 package hook;
 
+import AutomationPractice.ui.entities.Context;
 import AutomationPractice.ui.pages.AddressPage;
 import core.selenium.WebDriverManager;
 import cucumber.api.Scenario;
@@ -42,7 +43,10 @@ public class Hook {
      */
     @After("@DeleteAddress")
     public void deleteContact() {
+        Context context = new Context();
         AddressPage addressPage = new AddressPage();
-        addressPage.deleteAddress();
+        if(addressPage.getHeadingTxt() == context.getAddress().getAlias()){
+            addressPage.deleteAddress();
+        }
     }
 }

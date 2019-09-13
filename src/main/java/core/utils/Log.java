@@ -11,7 +11,6 @@ import org.apache.log4j.PropertyConfigurator;
  * @version 0.0.1
  */
 public final class Log {
-    private static final String LOG4J_PROPERTIES = "log4j.propertie";
     private static Log instance;
     private static Logger log = Logger.getLogger(Log.class);
 
@@ -26,7 +25,6 @@ public final class Log {
      * This method initializes the logger characteristics.
      */
     public void initialize() {
-        PropertyConfigurator.configure(LOG4J_PROPERTIES);
         log.setLevel(Level.ALL);
     }
 

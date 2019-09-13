@@ -1,6 +1,6 @@
 package AutomationPractice.ui.pages;
 
-import AutomationPractice.ui.Common.ReadAppFile;
+import AutomationPractice.ui.Common.UrlBuilder;
 import core.selenium.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 
@@ -26,6 +26,6 @@ public final class PageTransporter {
      */
     public static void goToUrl(final String url) {
         webDriver = WebDriverManager.getInstance().getWebDriver();
-        webDriver.navigate().to(ReadAppFile.getInstance().getUrl(url));
+        webDriver.navigate().to(UrlBuilder.getUrlReader(url));
     }
 }

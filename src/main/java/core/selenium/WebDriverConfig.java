@@ -1,11 +1,8 @@
 package core.selenium;
 
+import AutomationPractice.ui.Common.PropertyLoader;
 import core.selenium.webdrivers.BrowserType;
-import core.utils.Log;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.Properties;
 
 /**
@@ -20,6 +17,7 @@ public final class WebDriverConfig {
     private static final String BROWSER = "browser";
     private static final String IMPLICIT_WAIT_TIME = "implicitWaitTime";
     private static final String EXPLICIT_WAIT_TIME = "explicitWaitTime";
+    private static final String BROWSER_PROPERTIES = "gradle.properties";
 
     /**
      * Constructor of WebDriverConfig.
@@ -45,13 +43,7 @@ public final class WebDriverConfig {
      * This method reads browser properties and initializes the basic browser characteristics.
      */
     public void initialize() {
-        try (InputStream inputProperties = new FileInputStream("gradle.properties")) {
-            properties = new Properties();
-            properties.load(inputProperties);
-        } catch (IOException e) {
-            Log.getInstance().getLog().error(e + "File not found.");
-            throw new RuntimeException("File not found." + e);
-        }
+        properties = PropertyLoader.loadProperty(BROWSER_PROPERTIES);
     }
 
     /**

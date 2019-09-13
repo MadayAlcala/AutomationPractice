@@ -9,6 +9,7 @@ package AutomationPractice.ui.entities;
 public class Context {
     private Address address;
 
+
     /**
      * Constructor class.
      */

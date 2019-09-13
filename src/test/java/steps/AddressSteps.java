@@ -35,7 +35,7 @@ public class AddressSteps {
      *
      * @param url is the parameter that indicates what type of url needed.
      */
-    @Given("^I go to update \"([^\"]*)\" form$")
+    @When("^The user goes to create \"([^\"]*)\" form$")
     public void goToAddressPage(final String url) {
         PageTransporter.goToUrl(url);
         addressPage = new AddressPage();
@@ -46,18 +46,18 @@ public class AddressSteps {
      *
      * @param addressMap that indicates all the fields.
      */
-    @When("^I create a new Address with the following information$")
+    @When("^The user fills the form with the following information$")
     public void crateNewAddress(final Map<String, String> addressMap) {
         AddressFormAbstract addressForm = new AddressPage();
+        context.getAddress().setAccountInformation(addressMap);
         addressForm.setAccountInformation(addressMap);
-        //context.getAddress().setAccountInformation(addressMap);
         addressPage.clickSubmitBtn();
     }
 
     /**
      * This method verifies the correct address creation.
      */
-    @Then("^the address information should be displayed in the Address page$")
+    @Then("^The address information should be displayed in the Address page$")
     public void verifyTheAddressInformation() {
         Assert.assertEquals(addressPage.getHeadingTxt(), context.getAddress().getAlias().toUpperCase());
         Assert.assertEquals(addressPage.getPhoneMobileTxt(), context.getAddress().getPhoneMobile());

@@ -1,12 +1,14 @@
 Feature: Address
 
-  Background: I log in
-    Given I visit the "login" page
-    When I fill the form with "email" and "password"
+  Background: Log in with valid credentials
+    Given The user goes to "login" page
+    When The user fills the form with "email" and "password"
+    And "Sign out" should appear
 
-  Scenario: Edit the address as registered user
-    When I go to update "address" form
-    And I create a new Address with the following information
+  @DeleteAddress
+  Scenario: Create new address
+    When The user goes to create "address" form
+    And The user fills the form with the following information
       | firstname    | firstname     |
       | lastname     | lastname      |
       | company      | site          |
@@ -19,5 +21,5 @@ Feature: Address
       | phone        | 4578962       |
       | phone_mobile | 4578962       |
       | other        | Public        |
-      | alias        | Nuevito999    |
-    Then the address information should be displayed in the Address page
+      | alias        | Nuevo1245     |
+    Then The address information should be displayed in the Address page

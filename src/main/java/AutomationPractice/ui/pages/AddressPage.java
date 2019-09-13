@@ -59,6 +59,9 @@ public class AddressPage extends AddressFormAbstract {
     @FindBy(css = ".last_item .address_phone_mobile")
     private WebElement phoneMobile;
 
+    @FindBy(css = ".last_item .btn:nth-child(2) >span")
+    private WebElement deleteBtn;
+
     /**
      * This method return the name of the address header.
      * @return heading of the address.
@@ -79,7 +82,7 @@ public class AddressPage extends AddressFormAbstract {
      * This method delete the last address created.
      */
     public void deleteAddress() {
-        By.cssSelector(".last_item .btn:nth-child(2) > span").findElement(driver).click();
+        deleteBtn.click();
         driver.switchTo().alert().accept();
     }
 

@@ -15,6 +15,7 @@ public final class ReadAppFile {
     private static final String EMAIL = "email";
     private static final String PASSWORD = "password";
     private static final String PROPERTIES_FILE = "automationpractice.properties";
+
     private static ReadAppFile instance;
     private Properties properties;
 
@@ -29,15 +30,7 @@ public final class ReadAppFile {
      * This method reads the file 'automationpractice.properties'.
      */
     private void readConfigurationFile() {
-        FileInputStream inputStream;
-        try {
-            inputStream = new FileInputStream(PROPERTIES_FILE);
-            properties = new Properties();
-            properties.load(inputStream);
-        } catch (Exception e) {
-            Log.getInstance().getLog().error(e + "File not found.");
-            throw new NullPointerException("File not found." + e);
-        }
+        properties = PropertyLoader.loadProperty(PROPERTIES_FILE);
     }
 
     /**

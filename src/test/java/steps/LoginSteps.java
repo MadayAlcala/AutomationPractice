@@ -33,7 +33,7 @@ public class LoginSteps {
      *
      * @param url is the parameter that indicates what type of url needed.
      */
-    @Given("I visit the \"([^\"]*)\" page")
+    @Given("The user goes to \"([^\"]*)\" page")
     public void initializeLoginPage(final String url) {
         PageTransporter.goToUrl(url);
         loginPage = new LoginPage();
@@ -45,7 +45,7 @@ public class LoginSteps {
      * @param email    'email', represents the email of an user.
      * @param password 'password', represents the password according to the emal.
      */
-    @When("^I fill the form with \"([^\"]*)\" and \"([^\"]*)\"$")
+    @When("^The user fills the form with \"([^\"]*)\" and \"([^\"]*)\"$")
     public void fillLogInForm(final String email, final String password) {
         loginPage.login(email, password);
     }
