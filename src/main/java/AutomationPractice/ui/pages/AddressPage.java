@@ -1,6 +1,15 @@
+/*
+ * Copyright (c) 2019 Jalasoft.
+ *
+ *  This software is the confidential and proprietary information of Jalasoft.
+ *  ("Confidential Information"). You shall not
+ *  disclose such Confidential Information and shall use it only in
+ *  accordance with the terms of the license agreement you entered into
+ *  with Jalasoft.
+ */
+
 package AutomationPractice.ui.pages;
 
-import AutomationPractice.ui.BasePage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -10,7 +19,7 @@ import org.openqa.selenium.support.FindBy;
  * @author Maday Alcala
  * @version 0.0.1
  */
-public class AddressPage extends BasePage {
+public class AddressPage extends AddressFormAbstract {
     @FindBy(id = "firstname")
     private WebElement firstnametxtField;
 
@@ -53,20 +62,58 @@ public class AddressPage extends BasePage {
     @FindBy(css = "#submitAddress > span")
     private WebElement submitBtn;
 
+    @FindBy(css = ".last_item .address_name")
+    private WebElement firstName;
+
+    @FindBy(css = ".last_item .address_name +.address_name")
+    private WebElement lastName;
+
+    @FindBy(css = ".last_item .address_company")
+    private WebElement company;
+
+    @FindBy(css = ".last_item .address_address1")
+    private WebElement address1;
+
+    @FindBy(css = ".last_item .address_address2")
+    private WebElement address2;
+
+    @FindBy(css = ".last_item > li:nth-child(5) > span:nth-child(1)")
+    private WebElement city;
+
+    @FindBy(css = ".last_item > li:nth-child(5) > span:nth-child(2)")
+    private WebElement state;
+
+    @FindBy(css = ".last_item span:nth-child(3)")
+    private WebElement postCode;
+
+    @FindBy(css = ".last_item > li:nth-child(6) > span")
+    private WebElement country;
+
+    @FindBy(css = ".last_item .address_phone")
+    private WebElement phone;
+
+    @FindBy(css = ".last_item .address_phone_mobile")
+    private WebElement phoneMobile;
+
+    @FindBy(css = ".last_item .page-subheading")
+    private WebElement alias;
+
+    @FindBy(css = ".last_item .btn:nth-child(2) >span")
+    private WebElement deleteBtn;
+
     /**
-     * This method is in charge of the change address fields of the application.
-     *
-     * @param field 'field', it indicates the field with which the address update will be carried out.
+     * This method delete the last address created.
      */
-    public void address(final String field) {
-        setFirstName(field);
-        clickSubmitBtn();
+    public void deleteAddress() {
+        deleteBtn.click();
+        driver.switchTo().alert().accept();
     }
 
     /**
      * This method is in charge of clicking on the submit button.
      */
-    private void clickSubmitBtn() {
+    @Override
+    public void clickSubmitBtn() {
         submitBtn.click();
     }
 
@@ -75,9 +122,15 @@ public class AddressPage extends BasePage {
      *
      * @param firstName 'firstName', that represent an firstName.
      */
-    private void setFirstName(final String firstName) {
+    @Override
+    public void setFirstName(final String firstName) {
         firstnametxtField.clear();
         firstnametxtField.sendKeys(firstName);
+    }
+
+    @Override
+    public String getFirstNameTxt() {
+        return firstName.getText();
     }
 
     /**
@@ -85,8 +138,15 @@ public class AddressPage extends BasePage {
      *
      * @param lastName 'lastName', that represent an lastName.
      */
-    private void setLastName(final String lastName) {
+    @Override
+    public void setLastName(final String lastName) {
+        lastnametxtField.clear();
         lastnametxtField.sendKeys(lastName);
+    }
+
+    @Override
+    public String getLastNameTxt() {
+        return lastName.getText();
     }
 
     /**
@@ -94,8 +154,15 @@ public class AddressPage extends BasePage {
      *
      * @param company 'company', that represent an company.
      */
-    private void setCompany(final String company) {
+    @Override
+    public void setCompany(final String company) {
+        companytxtField.clear();
         companytxtField.sendKeys(company);
+    }
+
+    @Override
+    public String getCompanyTxt() {
+        return company.getText();
     }
 
     /**
@@ -103,8 +170,14 @@ public class AddressPage extends BasePage {
      *
      * @param address1 'address1', that represent an address1.
      */
-    private void setAddress1(final String address1) {
+    @Override
+    public void setAddress1(final String address1) {
         address1txtField.sendKeys(address1);
+    }
+
+    @Override
+    public String getAddress1Txt() {
+        return address1.getText();
     }
 
     /**
@@ -112,8 +185,19 @@ public class AddressPage extends BasePage {
      *
      * @param address2 'address2', that represent an address2.
      */
-    private void setAddress2(final String address2) {
+    @Override
+    public void setAddress2(final String address2) {
         address2txtField.sendKeys(address2);
+    }
+
+    @Override
+    public String getAddress2Txt() {
+        return address2.getText();
+    }
+
+    @Override
+    public String getCityTxt() {
+        return city.getText();
     }
 
     /**
@@ -121,7 +205,8 @@ public class AddressPage extends BasePage {
      *
      * @param city 'city', that represent an city.
      */
-    private void setcity(final String city) {
+    @Override
+    public void setCity(final String city) {
         citytxtField.sendKeys(city);
     }
 
@@ -130,8 +215,14 @@ public class AddressPage extends BasePage {
      *
      * @param state 'state', that represent an state.
      */
-    private void setIdState(final String state) {
+    @Override
+    public void setIdState(final String state) {
         statetxtField.sendKeys(state);
+    }
+
+    @Override
+    public String getIdStateTxt() {
+        return state.getText();
     }
 
     /**
@@ -139,8 +230,14 @@ public class AddressPage extends BasePage {
      *
      * @param postCode 'postCode', that represent an postCode.
      */
-    private void setPostCode(final String postCode) {
+    @Override
+    public void setPostCode(final String postCode) {
         postcodetxtField.sendKeys(postCode);
+    }
+
+    @Override
+    public String getPostCodeTxt() {
+        return postCode.getText();
     }
 
     /**
@@ -148,8 +245,14 @@ public class AddressPage extends BasePage {
      *
      * @param country 'country', that represent an country.
      */
-    private void setIdCountry(final String country) {
+    @Override
+    public void setIdCountry(final String country) {
         countrytxtField.sendKeys(country);
+    }
+
+    @Override
+    public String getCountryTxt() {
+        return country.getText();
     }
 
     /**
@@ -157,8 +260,14 @@ public class AddressPage extends BasePage {
      *
      * @param phone 'phone', that represent an phone.
      */
-    private void setPhone(final String phone) {
+    @Override
+    public void setPhone(final String phone) {
         phonetxtField.sendKeys(phone);
+    }
+
+    @Override
+    public String getPhoneTxt() {
+        return phone.getText();
     }
 
     /**
@@ -166,8 +275,14 @@ public class AddressPage extends BasePage {
      *
      * @param phoneMovil 'phoneMovil', that represent an phoneMovil.
      */
-    private void setPhoneMovil(final String phoneMovil) {
+    @Override
+    public void setPhoneMovil(final String phoneMovil) {
         phoneMobiletxtField.sendKeys(phoneMovil);
+    }
+
+    @Override
+    public String getPhoneMovilTxt() {
+        return phoneMobile.getText();
     }
 
     /**
@@ -175,7 +290,8 @@ public class AddressPage extends BasePage {
      *
      * @param other 'other', that represent an other.
      */
-    private void setOther(final String other) {
+    @Override
+    public void setOther(final String other) {
         othertxtField.sendKeys(other);
     }
 
@@ -184,7 +300,14 @@ public class AddressPage extends BasePage {
      *
      * @param alias 'alias', that represent an alias.
      */
-    private void setAlias(final String alias) {
+    @Override
+    public void setAlias(final String alias) {
+        aliastxtField.clear();
         aliastxtField.sendKeys(alias);
+    }
+
+    @Override
+    public String getAliasTxt() {
+        return alias.getText();
     }
 }

@@ -1,6 +1,16 @@
+/*
+ * Copyright (c) 2019 Jalasoft.
+ *
+ *  This software is the confidential and proprietary information of Jalasoft.
+ *  ("Confidential Information"). You shall not
+ *  disclose such Confidential Information and shall use it only in
+ *  accordance with the terms of the license agreement you entered into
+ *  with Jalasoft.
+ */
+
 package AutomationPractice.ui.pages;
 
-import AutomationPractice.ui.Common.ReadAppFile;
+import AutomationPractice.ui.Common.UrlBuilder;
 import core.selenium.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 
@@ -26,6 +36,6 @@ public final class PageTransporter {
      */
     public static void goToUrl(final String url) {
         webDriver = WebDriverManager.getInstance().getWebDriver();
-        webDriver.navigate().to(ReadAppFile.getInstance().getUrl(url));
+        webDriver.navigate().to(UrlBuilder.getUrlReader(url));
     }
 }

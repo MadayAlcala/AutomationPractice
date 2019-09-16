@@ -1,12 +1,19 @@
+/*
+ * Copyright (c) 2019 Jalasoft.
+ *
+ *  This software is the confidential and proprietary information of Jalasoft.
+ *  ("Confidential Information"). You shall not
+ *  disclose such Confidential Information and shall use it only in
+ *  accordance with the terms of the license agreement you entered into
+ *  with Jalasoft.
+ */
+
 package AutomationPractice.ui.Common;
 
-import core.utils.Log;
-
-import java.io.FileInputStream;
 import java.util.Properties;
 
 /**
- * ReadAppFile, this class is used for implement the read og the properties file.
+ * ReadAppFile, this class is used for implement the read of the properties file.
  *
  * @author Maday Alcala.
  * @version 0.0.1
@@ -29,15 +36,7 @@ public final class ReadAppFile {
      * This method reads the file 'automationpractice.properties'.
      */
     private void readConfigurationFile() {
-        FileInputStream inputStream;
-        try {
-            inputStream = new FileInputStream(PROPERTIES_FILE);
-            properties = new Properties();
-            properties.load(inputStream);
-        } catch (Exception e) {
-            Log.getInstance().getLog().error(e + "File not found.");
-            throw new NullPointerException("File not found." + e);
-        }
+        properties = PropertyLoader.loadProperty(PROPERTIES_FILE);
     }
 
     /**

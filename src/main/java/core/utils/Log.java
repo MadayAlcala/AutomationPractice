@@ -1,8 +1,17 @@
+/*
+ * Copyright (c) 2019 Jalasoft.
+ *
+ *  This software is the confidential and proprietary information of Jalasoft.
+ *  ("Confidential Information"). You shall not
+ *  disclose such Confidential Information and shall use it only in
+ *  accordance with the terms of the license agreement you entered into
+ *  with Jalasoft.
+ */
+
 package core.utils;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.apache.log4j.PropertyConfigurator;
 
 /**
  * This class is used to generate logs.
@@ -11,7 +20,6 @@ import org.apache.log4j.PropertyConfigurator;
  * @version 0.0.1
  */
 public final class Log {
-    private static final String LOG4J_PROPERTIES = "log4j.properties";
     private static Log instance;
     private static Logger log = Logger.getLogger(Log.class);
 
@@ -26,7 +34,6 @@ public final class Log {
      * This method initializes the logger characteristics.
      */
     public void initialize() {
-        PropertyConfigurator.configure(LOG4J_PROPERTIES);
         log.setLevel(Level.ALL);
     }
 

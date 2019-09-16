@@ -1,9 +1,18 @@
+/*
+ * Copyright (c) 2019 Jalasoft.
+ *
+ *  This software is the confidential and proprietary information of Jalasoft.
+ *  ("Confidential Information"). You shall not
+ *  disclose such Confidential Information and shall use it only in
+ *  accordance with the terms of the license agreement you entered into
+ *  with Jalasoft.
+ */
+
 package steps;
 
 import AutomationPractice.ui.pages.HomePage;
 import AutomationPractice.ui.pages.LoginPage;
 import AutomationPractice.ui.pages.PageTransporter;
-import cucumber.api.java.After;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -20,20 +29,11 @@ public class LoginSteps {
     private HomePage homePage;
 
     /**
-     * This method after executes after every scenario, 'sign out' the page.
-     */
-    @After
-    public void afterClass() {
-        homePage = new HomePage();
-        homePage.clickSignOutLink();
-    }
-
-    /**
      * This method is in charge of opening the login page.
      *
      * @param url is the parameter that indicates what type of url needed.
      */
-    @Given("I visit the \"([^\"]*)\" page")
+    @Given("The user goes to \"([^\"]*)\" page")
     public void initializeLoginPage(final String url) {
         PageTransporter.goToUrl(url);
         loginPage = new LoginPage();
@@ -42,10 +42,10 @@ public class LoginSteps {
     /**
      * This method fills in the user data to be able to log in.
      *
-     * @param email 'email', represents the email of an user.
+     * @param email    'email', represents the email of an user.
      * @param password 'password', represents the password according to the emal.
      */
-    @When("^I fill the form with \"([^\"]*)\" and \"([^\"]*)\"$")
+    @When("^The user fills the form with \"([^\"]*)\" and \"([^\"]*)\"$")
     public void fillLogInForm(final String email, final String password) {
         loginPage.login(email, password);
     }

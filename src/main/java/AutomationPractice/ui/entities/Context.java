@@ -8,15 +8,30 @@
  *  with Jalasoft.
  */
 
-package core.selenium.webdrivers;
+package AutomationPractice.ui.entities;
 
 /**
- * BrowserType, this enum declares the browser types that will be used in the framework.
+ * Context class.
  *
  * @author Maday Alcala
  * @version 0.0.1
  */
-public enum BrowserType {
-    CHROME,
-    FIREFOX
+public class Context {
+    private Address address;
+
+    /**
+     * Constructor class.
+     */
+    public Context() {
+        this.address = new Address();
+    }
+
+    /**
+     * Metod return the class address.
+     *
+     * @return address class.
+     */
+    public Address getAddress() {
+        return address;
+    }
 }
