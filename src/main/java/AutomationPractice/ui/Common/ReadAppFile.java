@@ -22,7 +22,6 @@ public final class ReadAppFile {
     private static final String EMAIL = "email";
     private static final String PASSWORD = "password";
     private static final String PROPERTIES_FILE = "automationpractice.properties";
-
     private static ReadAppFile instance;
     private Properties properties;
 

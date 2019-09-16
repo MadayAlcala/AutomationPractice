@@ -295,7 +295,6 @@ public class AddressPage extends AddressFormAbstract {
         othertxtField.sendKeys(other);
     }
 
-
     /**
      * This method sets the alias in the text box of the address form.
      *

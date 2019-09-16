@@ -43,7 +43,6 @@ public abstract class AddressFormAbstract extends BasePage {
      */
     public abstract String getFirstNameTxt();
 
-
     /**
      * This method sets the lastName in the text box of the address' form.
      *
@@ -261,4 +260,3 @@ public abstract class AddressFormAbstract extends BasePage {
         return strategyMap;
     }
 }
-

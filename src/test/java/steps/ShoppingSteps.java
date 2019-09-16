@@ -115,7 +115,6 @@ public class ShoppingSteps {
     public void choosingPaymentMethod() {
         summary.getCartSummPayByBankWire();
         Assert.assertEquals(summary.getCartSummPayByBankWireConfirm(), "BANK-WIRE PAYMENT.");
-
         summary.getCartSummOtherPaymentMethods();
         summary.getCartSummPayByCheck();
         Assert.assertEquals(summary.getCartSummPayByCheckConfirm(), "CHECK PAYMENT");
@@ -129,7 +128,6 @@ public class ShoppingSteps {
     @Then("^The user should see this success message: \"([^\"]*)\"$")
     public void successMessage(final String successMessage) {
         summary.getCartSummConfirmOrderBtn();
-
         Assert.assertEquals(summary.getCartSummSuccessMsg(), successMessage);
     }
 

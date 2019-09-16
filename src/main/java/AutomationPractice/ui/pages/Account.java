@@ -24,13 +24,11 @@ import java.util.List;
  * @version 0.0.1
  */
 public class Account extends BasePage {
-
     @FindBy(xpath = "//a[@title=\"View my customer account\"]")
     private WebElement accountBtn;
 
     @FindBy(xpath = "//span[contains(text(), \"Order history and details\")]")
     private WebElement accountOrderHistoryBtn;
-
 
     /**
      * This methos is used for obtain the order list.
@@ -40,7 +38,6 @@ public class Account extends BasePage {
     public List<WebElement> getAccountOrdersLis() {
         return driver.findElements(By.xpath("//table[@id=\"order-list\"]/tbody/tr"));
     }
-
 
     /**
      * This method is used to see an account.

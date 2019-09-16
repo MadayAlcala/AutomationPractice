@@ -30,9 +30,6 @@ public final class UrlBuilder {
     static final String EVENING_DRESSES = "id_category=10&controller=category";
     static final String CONTROLLER_ORDER = "controller=order";
 
-
-
-
     /**
      * This is the constructor of the class.
      */
@@ -55,10 +52,6 @@ public final class UrlBuilder {
         map.put("summerDresses", ReadAppFile.getInstance().getUrl(URL_BASE).concat(SUMMER_DRESSES));
         map.put("eveningDresses", ReadAppFile.getInstance().getUrl(URL_BASE).concat(EVENING_DRESSES));
         map.put("controlOrder", ReadAppFile.getInstance().getUrl(URL_BASE).concat(CONTROLLER_ORDER));
-
-
-
-
         return map.get(url);
     }
 }

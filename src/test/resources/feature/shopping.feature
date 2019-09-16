@@ -21,5 +21,3 @@ Feature: Shopping
       And The user choose a payment method
     Then The user should see this success message: "Your order on My Store is complete."
       And The user should see the order history with the number 41
-
-
