@@ -8,25 +8,25 @@ Feature: Address
   Scenario: Create new address with the required fields
     When The user goes to create "address" form
     And The user fills the form with the following information
-      | firstname  | firstname     |
-      | lastname   | lastname      |
-      | address1   | abc           |
+      | firstname  | Juan          |
+      | lastname   | Perez         |
+      | address1   | abcStreet     |
       | city       | Cochabamba    |
       | id_state   | Alabama       |
       | postcode   | 00000         |
       | id_country | United States |
       | phone      | 4578962       |
-      | alias      | Maday5        |
+      | alias      | Test1         |
     Then The address information should be displayed in the Address page
 
   Scenario: Create new address with all the fields
     When The user goes to create "address" form
     And The user fills the form with the following information
-      | firstname    | firstname     |
-      | lastname     | lastname      |
+      | firstname    | Juan          |
+      | lastname     | Perez         |
       | company      | AT10          |
-      | address1     | abc           |
-      | address2     | def           |
+      | address1     | abcStreet     |
+      | address2     | defStreet     |
       | city         | Cochabamba    |
       | id_state     | Alabama       |
       | postcode     | 00000         |
@@ -34,5 +34,5 @@ Feature: Address
       | phone        | 4578962       |
       | phone_mobile | 4578962       |
       | other        | New Address   |
-      | alias        | Maday6        |
+      | alias        | Test2         |
     Then The address information should be displayed in the Address page
