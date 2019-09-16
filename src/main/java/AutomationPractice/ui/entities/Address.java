@@ -25,15 +25,15 @@ public class Address {
     private String firstname;
     private String lastname;
     private String company;
-    private String address1;
-    private String address2;
+    private String mainAddress;
+    private String secondAddress;
     private String city;
     private String idState;
     private String postcode;
     private String idCountry;
     private String phone;
     private String phoneMobile;
-    private String other;
+    private String additionalInfo;
     private String alias;
 
     /**
@@ -91,39 +91,39 @@ public class Address {
     }
 
     /**
-     * This method is in charge of return the address address1.
+     * This method is in charge of return the address mainAddress.
      *
-     * @return address1.
+     * @return mainAddress.
      */
-    private String getAddress1() {
-        return address1;
+    private String getMainAddress() {
+        return mainAddress;
     }
 
     /**
-     * This method is in charge of set the address address1.
+     * This method is in charge of set the address mainAddress.
      *
-     * @param address1 address1.
+     * @param mainAddress mainAddress.
      */
-    private void setAddress1(final String address1) {
-        this.address1 = address1;
+    private void setMainAddress(final String mainAddress) {
+        this.mainAddress = mainAddress;
     }
 
     /**
-     * This method is in charge of return the address address2.
+     * This method is in charge of return the address secondAddress.
      *
-     * @return address2.
+     * @return secondAddress.
      */
-    private String getAddress2() {
-        return address2;
+    private String getSecondAddress() {
+        return secondAddress;
     }
 
     /**
-     * This method is in charge of set the address address2.
+     * This method is in charge of set the address secondAddress.
      *
-     * @param address2 address2.
+     * @param secondAddress secondAddress.
      */
-    private void setAddress2(final String address2) {
-        this.address2 = address2;
+    private void setSecondAddress(final String secondAddress) {
+        this.secondAddress = secondAddress;
     }
 
     /**
@@ -235,21 +235,21 @@ public class Address {
     }
 
     /**
-     * This method is in charge of return the address other.
+     * This method is in charge of return the address additionalInfo.
      *
-     * @return other.
+     * @return additionalInfo.
      */
-    private String getOther() {
-        return other;
+    private String getAdditionalInfo() {
+        return additionalInfo;
     }
 
     /**
-     * This method is in charge of set the address other.
+     * This method is in charge of set the address additionalInfo.
      *
-     * @param other other.
+     * @param additionalInfo additionalInfo.
      */
-    private void setOther(final String other) {
-        this.other = other;
+    private void setAdditionalInfo(final String additionalInfo) {
+        this.additionalInfo = additionalInfo;
     }
 
     /**
@@ -291,15 +291,15 @@ public class Address {
         strategyMap.put("firstname", () -> setFirstname(accountMap.get("firstname")));
         strategyMap.put("lastname", () -> setLastname(accountMap.get("lastname")));
         strategyMap.put("company", () -> setCompany(accountMap.get("company")));
-        strategyMap.put("address1", () -> setAddress1(accountMap.get("address1")));
-        strategyMap.put("address2", () -> setAddress2(accountMap.get("address2")));
+        strategyMap.put("address1", () -> setMainAddress(accountMap.get("mainAddress")));
+        strategyMap.put("address2", () -> setSecondAddress(accountMap.get("secondAddress")));
         strategyMap.put("city", () -> setCity(accountMap.get("city")));
         strategyMap.put("id_state", () -> setIdState(accountMap.get("id_state")));
         strategyMap.put("postcode", () -> setPostcode(accountMap.get("postcode")));
         strategyMap.put("id_country", () -> setIdCountry(accountMap.get("id_country")));
         strategyMap.put("phone", () -> setPhone(accountMap.get("phone")));
         strategyMap.put("phone_mobile", () -> setPhoneMobile(accountMap.get("phone_mobile")));
-        strategyMap.put("other", () -> setOther(accountMap.get("other")));
+        strategyMap.put("other", () -> setAdditionalInfo(accountMap.get("additionalInfo")));
         strategyMap.put("alias", () -> setAlias(accountMap.get("alias")));
         return strategyMap;
     }
@@ -314,8 +314,8 @@ public class Address {
         strategyMap.get(getFirstName());
         strategyMap.get(getLastName());
         strategyMap.get(getCompany());
-        strategyMap.get(getAddress1());
-        strategyMap.get(getAddress2());
+        strategyMap.get(getMainAddress());
+        strategyMap.get(getSecondAddress());
         strategyMap.get(getCity());
         strategyMap.get(getIdState());
         strategyMap.get(getPostcode());
