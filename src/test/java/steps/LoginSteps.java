@@ -36,7 +36,6 @@ public class LoginSteps {
     @Given("The user goes to \"([^\"]*)\" page")
     public void initializeLoginPage(final String url) {
         PageTransporter.goToUrl(url);
-        loginPage = new LoginPage();
     }
 
     /**
@@ -47,6 +46,7 @@ public class LoginSteps {
      */
     @When("^The user fills the form with \"([^\"]*)\" and \"([^\"]*)\"$")
     public void fillLogInForm(final String email, final String password) {
+        loginPage = new LoginPage();
         loginPage.login(email, password);
     }
 

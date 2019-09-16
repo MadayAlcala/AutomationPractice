@@ -27,6 +27,10 @@ public class ShoppingActions extends BasePage {
     @FindBy(xpath = "//span[@title=\"Continue shopping\"]")
     private WebElement continueShopingBtn;
 
+    @FindBy(css = ".available-now")
+    private WebElement available;
+
+
     /**
      * This method is used to go to cart.
      */
@@ -39,5 +43,12 @@ public class ShoppingActions extends BasePage {
      */
     public void getContinueShopingBtn() {
         continueShopingBtn.click();
+    }
+
+    /**
+     * This method is used to continue with a shopping.
+     */
+    public void getAvailable() {
+        available.click();
     }
 }

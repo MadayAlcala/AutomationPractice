@@ -23,7 +23,7 @@ import java.util.List;
  * @version 0.0.1
  */
 public class Cart extends BasePage {
-    @FindBy(xpath = "//b[contains(text(), \"Cart\")]/..")
+    @FindBy(css = ".shopping_cart > a")
     private WebElement cartTab;
 
     @FindBy(xpath = "//dt")
@@ -43,5 +43,6 @@ public class Cart extends BasePage {
      */
     public void getCartTab() {
         cartTab.click();
+
     }
 }

@@ -45,9 +45,7 @@ public class ShoppingSteps {
         shoppingActions = new ShoppingActions();
         summary = new CartSummary();
         account = new Account();
-
-        PageTransporter.goToUrl("summerDresses");
-
+        shoppingActions.getAvailable();
         Assert.assertEquals(clothes.getDressesCount().size(), 3);
         clothes.getSummerDressProduct(1);
         shoppingActions.getAddToCartBtn();
@@ -61,7 +59,7 @@ public class ShoppingSteps {
      */
     @When("^The user choose a casual dress$")
     public void choosingCasualDress() {
-        PageTransporter.goToUrl("casualDresses");
+        shoppingActions.getAvailable();
         clothes.getCasualDressProduct(1);
         shoppingActions.getAddToCartBtn();
         shoppingActions.getContinueShopingBtn();
@@ -72,16 +70,14 @@ public class ShoppingSteps {
     /**
      * This method is for choose a evening dress.
      */
-    @When("^The user casual a evening dress$")
+    @When("^The user choose a evening dress$")
     public void choosingEveningDress() {
         PageTransporter.goToUrl("eveningDresses");
-
+        shoppingActions.getAvailable();
         clothes.getEveningDressProduct(1);
         shoppingActions.getAddToCartBtn();
-
         shoppingActions.getContinueShopingBtn();
         cart.getCartTab();
-
         Assert.assertEquals(cart.getCartProductsQty().size(), 3);
     }
 
@@ -138,8 +134,6 @@ public class ShoppingSteps {
      */
     @Then("^The user should see the order history with the number (\\d+)$")
     public void orderHistoryIncresed(final int number) {
-        account.getAccountBtn();
-        account.getAccountOrderHistoryBtn();
         account.getAccountBtn();
         account.getAccountOrderHistoryBtn();
         Assert.assertEquals(account.getAccountOrdersLis().size(), number);

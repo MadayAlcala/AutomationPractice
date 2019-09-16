@@ -11,7 +11,7 @@ Feature: Shopping
     Given The user goes to "casualDresses" page
       And The user choose a casual dress
     Given The user goes to "eveningDresses" page
-      And The user casual a evening dress
+      And The user choose a evening dress
     Then The cart sum of product is equal to the next information
       | TotalProductsPrice | $105.97 |
       | TotalPrice         | $107.97 |
@@ -20,4 +20,4 @@ Feature: Shopping
     When The user accept the terms of service check
       And The user choose a payment method
     Then The user should see this success message: "Your order on My Store is complete."
-      And The user should see the order history with the number 41
+      And The user should see the order history with the number 43
