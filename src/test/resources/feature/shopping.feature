@@ -5,19 +5,20 @@ Feature: Shopping
     When The user fills the form with "email" and "password"
     Then Username should appear in the left panel
 
-  Scenario: Order a Shopping
-    Given The user goes to "summerDresses" page
-      And The user Choose a summer dress
-    Given The user goes to "casualDresses" page
-      And The user choose a casual dress
-    Given The user goes to "eveningDresses" page
-      And The user choose a evening dress
-    Then The cart sum of product is equal to the next information
-      | TotalProductsPrice | $105.97 |
-      | TotalPrice         | $107.97 |
-      | TotalShipping      | $2.00   |
-
+  @signOut
+  Scenario Outline: Order a Shopping
+    Given The user goes to "<dresstype>" page
+    And The user Choose a summer dress
+#    Then The cart sum of product is equal to the next information
+#      | TotalProductsPrice | $105.97 |
+#      | TotalPrice         | $107.97 |
+#      | TotalShipping      | $2.00   |
     When The user accept the terms of service check
-      And The user choose a payment method
+    And The user choose a payment method
     Then The user should see this success message: "Your order on My Store is complete."
-      And The user should see the order history with the number 43
+    And The user should see the order history with the number 53
+    Examples: dresses with valid pages
+      | dresstype      |
+      | summerDresses  |
+      | casualDresses  |
+      | eveningDresses |

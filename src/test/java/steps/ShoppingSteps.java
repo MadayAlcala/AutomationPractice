@@ -46,39 +46,11 @@ public class ShoppingSteps {
         summary = new CartSummary();
         account = new Account();
         shoppingActions.getAvailable();
-        Assert.assertEquals(clothes.getDressesCount().size(), 3);
         clothes.getSummerDressProduct(1);
         shoppingActions.getAddToCartBtn();
         shoppingActions.getContinueShopingBtn();
         cart.getCartTab();
         Assert.assertEquals(cart.getCartProductsQty().size(), 1);
-    }
-
-    /**
-     * This method is for choose a casual dress.
-     */
-    @When("^The user choose a casual dress$")
-    public void choosingCasualDress() {
-        shoppingActions.getAvailable();
-        clothes.getCasualDressProduct(1);
-        shoppingActions.getAddToCartBtn();
-        shoppingActions.getContinueShopingBtn();
-        cart.getCartTab();
-        Assert.assertEquals(cart.getCartProductsQty().size(), 2);
-    }
-
-    /**
-     * This method is for choose a evening dress.
-     */
-    @When("^The user choose a evening dress$")
-    public void choosingEveningDress() {
-        PageTransporter.goToUrl("eveningDresses");
-        shoppingActions.getAvailable();
-        clothes.getEveningDressProduct(1);
-        shoppingActions.getAddToCartBtn();
-        shoppingActions.getContinueShopingBtn();
-        cart.getCartTab();
-        Assert.assertEquals(cart.getCartProductsQty().size(), 3);
     }
 
     /**
