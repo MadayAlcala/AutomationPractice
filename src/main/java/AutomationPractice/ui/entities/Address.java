@@ -37,7 +37,7 @@ public class Address {
     private String alias;
 
     /**
-     * This method is in charge of return the address firstname.
+     * This method is in charge of return the address' firstname.
      *
      * @return firstname.
      */
@@ -46,7 +46,7 @@ public class Address {
     }
 
     /**
-     * This method is in charge of return the address firstname.
+     * This method is in charge of return the address' firstname.
      *
      * @param firstname firstname.
      */
@@ -55,7 +55,7 @@ public class Address {
     }
 
     /**
-     * This method is in charge of return the address lastname.
+     * This method is in charge of return the address' lastname.
      *
      * @return lastname.
      */
@@ -64,7 +64,7 @@ public class Address {
     }
 
     /**
-     * This method is in charge of set the address lastname.
+     * This method is in charge of set the address' lastname.
      *
      * @param lastname lastname.
      */
@@ -73,7 +73,7 @@ public class Address {
     }
 
     /**
-     * This method is in charge of return the address company.
+     * This method is in charge of return the address' company.
      *
      * @return company.
      */
@@ -82,7 +82,7 @@ public class Address {
     }
 
     /**
-     * This method is in charge of set the address company.
+     * This method is in charge of set the address' company.
      *
      * @param company company.
      */
@@ -91,7 +91,7 @@ public class Address {
     }
 
     /**
-     * This method is in charge of return the address mainAddress.
+     * This method is in charge of return the address' mainAddress.
      *
      * @return mainAddress.
      */
@@ -100,7 +100,7 @@ public class Address {
     }
 
     /**
-     * This method is in charge of set the address mainAddress.
+     * This method is in charge of set the address' mainAddress.
      *
      * @param mainAddress mainAddress.
      */
@@ -109,7 +109,7 @@ public class Address {
     }
 
     /**
-     * This method is in charge of return the address secondAddress.
+     * This method is in charge of return the address' secondAddress.
      *
      * @return secondAddress.
      */
@@ -118,7 +118,7 @@ public class Address {
     }
 
     /**
-     * This method is in charge of set the address secondAddress.
+     * This method is in charge of set the address' secondAddress.
      *
      * @param secondAddress secondAddress.
      */
@@ -127,7 +127,7 @@ public class Address {
     }
 
     /**
-     * This method is in charge of return the address city.
+     * This method is in charge of return the address' city.
      *
      * @return city.
      */
@@ -136,7 +136,7 @@ public class Address {
     }
 
     /**
-     * This method is in charge of set the address city.
+     * This method is in charge of set the address' city.
      *
      * @param city city.
      */
@@ -145,7 +145,7 @@ public class Address {
     }
 
     /**
-     * This method is in charge of return the address idState.
+     * This method is in charge of return the address' idState.
      *
      * @return idState.
      */
@@ -154,7 +154,7 @@ public class Address {
     }
 
     /**
-     * This method is in charge of set the address idState.
+     * This method is in charge of set the address' idState.
      *
      * @param idState idState.
      */
@@ -163,7 +163,7 @@ public class Address {
     }
 
     /**
-     * This method is in charge of return the address postcode.
+     * This method is in charge of return the address' postcode.
      *
      * @return postcode.
      */
@@ -172,7 +172,7 @@ public class Address {
     }
 
     /**
-     * This method is in charge of set the address postcode.
+     * This method is in charge of set the address' postcode.
      *
      * @param postcode postcode.
      */
@@ -181,7 +181,7 @@ public class Address {
     }
 
     /**
-     * This method is in charge of return the address idCountry.
+     * This method is in charge of return the address' idCountry.
      *
      * @return idCountry.
      */
@@ -190,7 +190,7 @@ public class Address {
     }
 
     /**
-     * This method is in charge of set the address idCountry.
+     * This method is in charge of set the address' idCountry.
      *
      * @param idCountry idCountry.
      */
@@ -199,7 +199,7 @@ public class Address {
     }
 
     /**
-     * This method is in charge of return the address phone.
+     * This method is in charge of return the address' phone.
      *
      * @return phone.
      */
@@ -208,52 +208,52 @@ public class Address {
     }
 
     /**
-     * This method is in charge of set the address phone.
+     * This method is in charge of set the address' main phone.
      *
-     * @param phone phone.
+     * @param phone that represents the main phone.
      */
     private void setPhone(final String phone) {
         this.phone = phone;
     }
 
     /**
-     * This method is in charge of return the address phoneMobile.
+     * This method is in charge of return the address' second phone.
      *
-     * @return phoneMobile.
+     * @return phoneMobile that represents an optional phone.
      */
     public String getPhoneMobile() {
         return phoneMobile;
     }
 
     /**
-     * This method is in charge of set the address phoneMobile.
+     * This method is in charge of set the address' second phone.
      *
-     * @param phoneMobile phoneMobile.
+     * @param phoneMobile 'phoneMobile' that represents an optional phone.
      */
     private void setPhoneMobile(final String phoneMobile) {
         this.phoneMobile = phoneMobile;
     }
 
     /**
-     * This method is in charge of return the address additionalInfo.
+     * This method is in charge of return the address' additionalInfo.
      *
-     * @return additionalInfo.
+     * @return additionalInfo that could be any other additional information.
      */
     private String getAdditionalInfo() {
         return additionalInfo;
     }
 
     /**
-     * This method is in charge of set the address additionalInfo.
+     * This method is in charge of set the address' additionalInfo.
      *
-     * @param additionalInfo additionalInfo.
+     * @param additionalInfo 'additionalInfo' that could be any other additional information.
      */
     private void setAdditionalInfo(final String additionalInfo) {
         this.additionalInfo = additionalInfo;
     }
 
     /**
-     * This method is in charge of return the address alias.
+     * This method is in charge of return the address' alias.
      *
      * @return alias.
      */
@@ -262,7 +262,7 @@ public class Address {
     }
 
     /**
-     * This method is in charge of set the address alias.
+     * This method is in charge of set the address' alias.
      *
      * @param alias alias.
      */
@@ -271,7 +271,7 @@ public class Address {
     }
 
     /**
-     * This method is in charge of create a map for the address elements.
+     * This method is in charge of create a map for the address' elements.
      *
      * @param accountMap that represent all the values for the elements.
      */
@@ -281,7 +281,7 @@ public class Address {
     }
 
     /**
-     * This method is in charge of fill of the address element in the map.
+     * This method is in charge of fill of the address' element in the map.
      *
      * @param accountMap that represents the values for the map.
      * @return strategy map.
