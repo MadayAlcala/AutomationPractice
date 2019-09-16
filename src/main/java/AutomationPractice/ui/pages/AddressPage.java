@@ -91,22 +91,6 @@ public class AddressPage extends AddressFormAbstract {
     @FindBy(css = ".last_item .btn:nth-child(2) >span")
     private WebElement deleteBtn;
 
-//    /**
-//     * This method return the name of the address header.
-//     * @return heading of the address.
-//     */
-//    public String getHeadingTxt() {
-//        return heading.getText();
-//    }
-//
-//    /**
-//     * This method return the name of the mobile phone header.
-//     * @return text of the mobile phone.
-//     */
-//    public String getPhoneMobileTxt() {
-//        return phoneMobile.getText();
-//    }
-
     /**
      * This method delete the last address created.
      */

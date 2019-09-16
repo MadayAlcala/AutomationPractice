@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 /**
- * HomePage class, this class have the locators of the HomePage.
+ * WishlistPage class, this class have the locators of the WishlistPage.
  *
  * @author Maday Alcala
  * @version 0.0.1
@@ -21,7 +21,4 @@ public class WishlistPage extends BasePage {
         wishlist.click();
         driver.switchTo().alert().accept();
     }
-
-
 }
-
