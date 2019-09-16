@@ -12,6 +12,7 @@ package hook;
 
 import AutomationPractice.ui.entities.Context;
 import AutomationPractice.ui.pages.AddressPage;
+import AutomationPractice.ui.pages.HomePage;
 import core.selenium.WebDriverManager;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
@@ -55,11 +56,20 @@ public class Hook {
     /**
      * This method is for delete an address.
      */
-    @After("@DeleteAddress")
+    @After(order = 1, value = "@DeleteAddress")
     public void deleteContact() {
         AddressPage addressPage = new AddressPage();
         if (context.getAddress().getAlias().equals(addressPage.getAliasTxt())) {
             addressPage.deleteAddress();
         }
+    }
+
+    /**
+     * This method is sign out of the app.
+     */
+    @After(order = 0, value = "@signOut")
+    public void signOut() {
+        HomePage homePage = new HomePage();
+        homePage.clickSignOutLink();
     }
 }

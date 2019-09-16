@@ -5,6 +5,7 @@ Feature: Address
     When The user fills the form with "email" and "password"
     Then Username should appear in the left panel
 
+  @DeleteAddress @signOut
   Scenario: Create new address with the required fields
     When The user goes to create "address" form
     And The user fills the form with the following information
@@ -19,6 +20,7 @@ Feature: Address
       | alias      | Test1         |
     Then The address information should be displayed in the Address page
 
+  @DeleteAddress @signOut
   Scenario: Create new address with all the fields
     When The user goes to create "address" form
     And The user fills the form with the following information

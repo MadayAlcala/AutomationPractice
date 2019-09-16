@@ -13,7 +13,6 @@ package steps;
 import AutomationPractice.ui.pages.HomePage;
 import AutomationPractice.ui.pages.LoginPage;
 import AutomationPractice.ui.pages.PageTransporter;
-import cucumber.api.java.After;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -28,15 +27,6 @@ import org.testng.Assert;
 public class LoginSteps {
     private LoginPage loginPage;
     private HomePage homePage;
-
-    /**
-     * This method after executes after every scenario, 'sign out' the page.
-     */
-    @After
-    public void afterClass() {
-        homePage = new HomePage();
-        homePage.clickSignOutLink();
-    }
 
     /**
      * This method is in charge of opening the login page.
