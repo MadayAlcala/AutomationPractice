@@ -14,13 +14,10 @@ import AutomationPractice.ui.pages.Account;
 import AutomationPractice.ui.pages.Cart;
 import AutomationPractice.ui.pages.CartSummary;
 import AutomationPractice.ui.pages.Clothes;
-import AutomationPractice.ui.pages.PageTransporter;
 import AutomationPractice.ui.pages.ShoppingActions;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.testng.Assert;
-
-import java.util.Map;
 
 /**
  * ShoppingSteps class, here are implemented the steps for a shopping.
@@ -53,17 +50,17 @@ public class ShoppingSteps {
         Assert.assertEquals(cart.getCartProductsQty().size(), 1);
     }
 
-    /**
-     * This method is for test the data.
-     *
-     * @param cartsSum with the price values.
-     */
-    @Then("^The cart sum of product is equal to the next information$")
-    public void cartSummarytotalPrice(final Map<String, String> cartsSum) {
-        Assert.assertEquals(summary.getCartSummTotalProductsPrice(), cartsSum.get("TotalProductsPrice"));
-        Assert.assertEquals(summary.getCartSummaryTotalPrice(), cartsSum.get("TotalPrice"));
-        Assert.assertEquals(summary.getCartSummTotalShipping(), cartsSum.get("TotalShipping"));
-    }
+//    /**
+//     * This method is for test the data.
+//     *
+//     * @param cartsSum with the price values.
+//     */
+//    @Then("^The cart sum of product is equal to the next information$")
+//    public void cartSummarytotalPrice(final Map<String, String> cartsSum) {
+//        Assert.assertEquals(summary.getCartSummTotalProductsPrice(), cartsSum.get("TotalProductsPrice"));
+//        Assert.assertEquals(summary.getCartSummaryTotalPrice(), cartsSum.get("TotalPrice"));
+//        Assert.assertEquals(summary.getCartSummTotalShipping(), cartsSum.get("TotalShipping"));
+//    }
 
     /**
      * This method is for accept the terms condition.

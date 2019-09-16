@@ -29,6 +29,9 @@ public final class UrlBuilder {
     static final String SUMMER_DRESSES = "id_category=11&controller=category";
     static final String EVENING_DRESSES = "id_category=10&controller=category";
     static final String CONTROLLER_ORDER = "controller=order";
+    static final String T_SHIRTS = "id_category=5&controller=category";
+    static final String BLOUSES = "id_category=7&controller=category";
+
 
     /**
      * This is the constructor of the class.
@@ -52,6 +55,8 @@ public final class UrlBuilder {
         map.put("summerDresses", ReadAppFile.getInstance().getUrl(URL_BASE).concat(SUMMER_DRESSES));
         map.put("eveningDresses", ReadAppFile.getInstance().getUrl(URL_BASE).concat(EVENING_DRESSES));
         map.put("controlOrder", ReadAppFile.getInstance().getUrl(URL_BASE).concat(CONTROLLER_ORDER));
+        map.put("tShirts", ReadAppFile.getInstance().getUrl(URL_BASE).concat(T_SHIRTS));
+        map.put("blouses", ReadAppFile.getInstance().getUrl(URL_BASE).concat(BLOUSES));
         return map.get(url);
     }
 }

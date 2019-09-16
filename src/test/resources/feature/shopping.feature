@@ -16,9 +16,11 @@ Feature: Shopping
     When The user accept the terms of service check
     And The user choose a payment method
     Then The user should see this success message: "Your order on My Store is complete."
-    And The user should see the order history with the number 53
+#    And The user should see the order history with the number 53
     Examples: dresses with valid pages
       | dresstype      |
       | summerDresses  |
       | casualDresses  |
       | eveningDresses |
+      | tShirts        |
+      | blouses        |
