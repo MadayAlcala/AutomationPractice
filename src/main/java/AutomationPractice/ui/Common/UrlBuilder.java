@@ -1,19 +1,27 @@
 package AutomationPractice.ui.Common;
 
-import core.selenium.webdrivers.BrowserType;
-import core.selenium.webdrivers.IBrowser;
-
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * UrlBuilder, this class is used for build a url with the urlBase and the endpoint.
+ *
+ * @author Maday Alcala.
+ * @version 0.0.1
+ */
 public class UrlBuilder {
-    final static String URL_BASE = "url";
-    final static String LOGIN = "controller=authentication&back=my-account";
-    final static String ADDRESS = "controller=address";
-    final static String WISHLIST = "fc=module&module=blockwishlist&controller=mywishlist";
+    static final String URL_BASE = "url";
+    static final String LOGIN = "controller=authentication&back=my-account";
+    static final String ADDRESS = "controller=address";
+    static final String WISHLIST = "fc=module&module=blockwishlist&controller=mywishlist";
 
-
-    public static String getUrlReader(String url) {
+    /**
+     * This Method build an utl and return the necessary url.
+     *
+     * @param url is the type of url that is needed.
+     * @return the url needed according to the parameter 'url'.
+     */
+    public static String getUrlReader(final String url) {
         Map<String, String> map = new HashMap<>();
         map.put("login", ReadAppFile.getInstance().getUrl(URL_BASE).concat(LOGIN));
         map.put("address", ReadAppFile.getInstance().getUrl(URL_BASE).concat(ADDRESS));

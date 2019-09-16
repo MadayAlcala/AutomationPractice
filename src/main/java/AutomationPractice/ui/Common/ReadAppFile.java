@@ -1,12 +1,9 @@
 package AutomationPractice.ui.Common;
 
-import core.utils.Log;
-
-import java.io.FileInputStream;
 import java.util.Properties;
 
 /**
- * ReadAppFile, this class is used for implement the read og the properties file.
+ * ReadAppFile, this class is used for implement the read of the properties file.
  *
  * @author Maday Alcala.
  * @version 0.0.1

@@ -4,7 +4,6 @@ import AutomationPractice.ui.entities.Context;
 import AutomationPractice.ui.pages.AddressFormAbstract;
 import AutomationPractice.ui.pages.AddressPage;
 import AutomationPractice.ui.pages.PageTransporter;
-import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.testng.Assert;
@@ -18,8 +17,8 @@ import java.util.Map;
  * @version 0.0.1
  */
 public class AddressSteps {
-    private AddressPage addressPage;
     private Context context;
+    private AddressFormAbstract addressForm;
 
     /**
      * This is the constructor.
@@ -38,7 +37,7 @@ public class AddressSteps {
     @When("^The user goes to create \"([^\"]*)\" form$")
     public void goToAddressPage(final String url) {
         PageTransporter.goToUrl(url);
-        addressPage = new AddressPage();
+        addressForm = new AddressPage();
     }
 
     /**
@@ -48,10 +47,9 @@ public class AddressSteps {
      */
     @When("^The user fills the form with the following information$")
     public void crateNewAddress(final Map<String, String> addressMap) {
-        AddressFormAbstract addressForm = new AddressPage();
         context.getAddress().setAccountInformation(addressMap);
         addressForm.setAccountInformation(addressMap);
-        addressPage.clickSubmitBtn();
+        addressForm.clickSubmitBtn();
     }
 
     /**
@@ -59,7 +57,6 @@ public class AddressSteps {
      */
     @Then("^The address information should be displayed in the Address page$")
     public void verifyTheAddressInformation() {
-        Assert.assertEquals(addressPage.getHeadingTxt(), context.getAddress().getAlias().toUpperCase());
-        Assert.assertEquals(addressPage.getPhoneMobileTxt(), context.getAddress().getPhoneMobile());
+        Assert.assertEquals(addressForm.composeStrategyMap(), context.getAddress().composeStrategyMap());
     }
 }

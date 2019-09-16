@@ -17,12 +17,16 @@ import org.openqa.selenium.WebDriver;
  */
 public class Hook {
     private WebDriver webDriver;
+    private Context context;
 
     /**
      * Constructor of Hook.
+     *
+     * @param context represent the entities that it could be called.
      */
-    public Hook() {
+    public Hook(final Context context) {
         this.webDriver = WebDriverManager.getInstance().getWebDriver();
+        this.context = context;
     }
 
     /**
@@ -43,9 +47,8 @@ public class Hook {
      */
     @After("@DeleteAddress")
     public void deleteContact() {
-        Context context = new Context();
         AddressPage addressPage = new AddressPage();
-        if(addressPage.getHeadingTxt() == context.getAddress().getAlias()){
+        if (context.getAddress().getAlias().equals(addressPage.getAliasTxt())) {
             addressPage.deleteAddress();
         }
     }

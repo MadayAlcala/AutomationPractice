@@ -49,7 +49,7 @@ public class Address {
      *
      * @return lastname.
      */
-    private String getLastname() {
+    private String getLastName() {
         return lastname;
     }
 
@@ -248,7 +248,7 @@ public class Address {
      * @return alias.
      */
     public String getAlias() {
-        return alias;
+        return alias.toUpperCase();
     }
 
     /**
@@ -291,6 +291,28 @@ public class Address {
         strategyMap.put("phone_mobile", () -> setPhoneMobile(accountMap.get("phone_mobile")));
         strategyMap.put("other", () -> setOther(accountMap.get("other")));
         strategyMap.put("alias", () -> setAlias(accountMap.get("alias")));
+        return strategyMap;
+    }
+
+    /**
+     * This method build getter map with all the variables of an address.
+     *
+     * @return 'strategyMap' that contains all the variables of the address.
+     */
+    public HashMap<String, StrategySetter> composeStrategyMap() {
+        HashMap<String, StrategySetter> strategyMap = new HashMap<>();
+        strategyMap.get(getFirstName());
+        strategyMap.get(getLastName());
+        strategyMap.get(getCompany());
+        strategyMap.get(getAddress1());
+        strategyMap.get(getAddress2());
+        strategyMap.get(getCity());
+        strategyMap.get(getIdState());
+        strategyMap.get(getPostcode());
+        strategyMap.get(getIdCountry());
+        strategyMap.get(getPhone());
+        strategyMap.get(getPhoneMobile());
+        strategyMap.get(getAlias());
         return strategyMap;
     }
 }

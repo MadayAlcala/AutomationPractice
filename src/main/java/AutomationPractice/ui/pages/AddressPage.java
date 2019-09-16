@@ -1,6 +1,5 @@
 package AutomationPractice.ui.pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -53,30 +52,60 @@ public class AddressPage extends AddressFormAbstract {
     @FindBy(css = "#submitAddress > span")
     private WebElement submitBtn;
 
-    @FindBy(css = ".last_item .page-subheading")
-    private WebElement heading;
+    @FindBy(css = ".last_item .address_name")
+    private WebElement firstName;
+
+    @FindBy(css = ".last_item .address_name +.address_name")
+    private WebElement lastName;
+
+    @FindBy(css = ".last_item .address_company")
+    private WebElement company;
+
+    @FindBy(css = ".last_item .address_address1")
+    private WebElement address1;
+
+    @FindBy(css = ".last_item .address_address2")
+    private WebElement address2;
+
+    @FindBy(css = ".last_item > li:nth-child(5) > span:nth-child(1)")
+    private WebElement city;
+
+    @FindBy(css = ".last_item > li:nth-child(5) > span:nth-child(2)")
+    private WebElement state;
+
+    @FindBy(css = ".last_item span:nth-child(3)")
+    private WebElement postCode;
+
+    @FindBy(css = ".last_item > li:nth-child(6) > span")
+    private WebElement country;
+
+    @FindBy(css = ".last_item .address_phone")
+    private WebElement phone;
 
     @FindBy(css = ".last_item .address_phone_mobile")
     private WebElement phoneMobile;
 
+    @FindBy(css = ".last_item .page-subheading")
+    private WebElement alias;
+
     @FindBy(css = ".last_item .btn:nth-child(2) >span")
     private WebElement deleteBtn;
 
-    /**
-     * This method return the name of the address header.
-     * @return heading of the address.
-     */
-    public String getHeadingTxt() {
-        return heading.getText();
-    }
-
-    /**
-     * This method return the name of the mobile phone header.
-     * @return text of the mobile phone.
-     */
-    public String getPhoneMobileTxt() {
-        return phoneMobile.getText();
-    }
+//    /**
+//     * This method return the name of the address header.
+//     * @return heading of the address.
+//     */
+//    public String getHeadingTxt() {
+//        return heading.getText();
+//    }
+//
+//    /**
+//     * This method return the name of the mobile phone header.
+//     * @return text of the mobile phone.
+//     */
+//    public String getPhoneMobileTxt() {
+//        return phoneMobile.getText();
+//    }
 
     /**
      * This method delete the last address created.
@@ -105,6 +134,11 @@ public class AddressPage extends AddressFormAbstract {
         firstnametxtField.sendKeys(firstName);
     }
 
+    @Override
+    public String getFirstNameTxt() {
+        return firstName.getText();
+    }
+
     /**
      * This method sets the lastName in the text box of the address form.
      *
@@ -114,6 +148,11 @@ public class AddressPage extends AddressFormAbstract {
     public void setLastName(final String lastName) {
         lastnametxtField.clear();
         lastnametxtField.sendKeys(lastName);
+    }
+
+    @Override
+    public String getLastNameTxt() {
+        return lastName.getText();
     }
 
     /**
@@ -127,6 +166,11 @@ public class AddressPage extends AddressFormAbstract {
         companytxtField.sendKeys(company);
     }
 
+    @Override
+    public String getCompanyTxt() {
+        return company.getText();
+    }
+
     /**
      * This method sets the address1 in the text box of the address form.
      *
@@ -135,6 +179,11 @@ public class AddressPage extends AddressFormAbstract {
     @Override
     public void setAddress1(final String address1) {
         address1txtField.sendKeys(address1);
+    }
+
+    @Override
+    public String getAddress1Txt() {
+        return address1.getText();
     }
 
     /**
@@ -147,13 +196,23 @@ public class AddressPage extends AddressFormAbstract {
         address2txtField.sendKeys(address2);
     }
 
+    @Override
+    public String getAddress2Txt() {
+        return address2.getText();
+    }
+
+    @Override
+    public String getCityTxt() {
+        return city.getText();
+    }
+
     /**
      * This method sets the city in the text box of the address form.
      *
      * @param city 'city', that represent an city.
      */
     @Override
-    public void setcity(final String city) {
+    public void setCity(final String city) {
         citytxtField.sendKeys(city);
     }
 
@@ -167,6 +226,11 @@ public class AddressPage extends AddressFormAbstract {
         statetxtField.sendKeys(state);
     }
 
+    @Override
+    public String getIdStateTxt() {
+        return state.getText();
+    }
+
     /**
      * This method sets the postCode in the text box of the address form.
      *
@@ -175,6 +239,11 @@ public class AddressPage extends AddressFormAbstract {
     @Override
     public void setPostCode(final String postCode) {
         postcodetxtField.sendKeys(postCode);
+    }
+
+    @Override
+    public String getPostCodeTxt() {
+        return postCode.getText();
     }
 
     /**
@@ -187,6 +256,11 @@ public class AddressPage extends AddressFormAbstract {
         countrytxtField.sendKeys(country);
     }
 
+    @Override
+    public String getCountryTxt() {
+        return country.getText();
+    }
+
     /**
      * This method sets the phone in the text box of the address form.
      *
@@ -195,6 +269,11 @@ public class AddressPage extends AddressFormAbstract {
     @Override
     public void setPhone(final String phone) {
         phonetxtField.sendKeys(phone);
+    }
+
+    @Override
+    public String getPhoneTxt() {
+        return phone.getText();
     }
 
     /**
@@ -207,6 +286,11 @@ public class AddressPage extends AddressFormAbstract {
         phoneMobiletxtField.sendKeys(phoneMovil);
     }
 
+    @Override
+    public String getPhoneMovilTxt() {
+        return phoneMobile.getText();
+    }
+
     /**
      * This method sets the other in the text box of the address form.
      *
@@ -217,6 +301,7 @@ public class AddressPage extends AddressFormAbstract {
         othertxtField.sendKeys(other);
     }
 
+
     /**
      * This method sets the alias in the text box of the address form.
      *
@@ -226,5 +311,10 @@ public class AddressPage extends AddressFormAbstract {
     public void setAlias(final String alias) {
         aliastxtField.clear();
         aliastxtField.sendKeys(alias);
+    }
+
+    @Override
+    public String getAliasTxt() {
+        return alias.getText();
     }
 }
