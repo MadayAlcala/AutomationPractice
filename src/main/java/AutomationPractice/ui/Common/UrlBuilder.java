@@ -24,6 +24,14 @@ public final class UrlBuilder {
     static final String LOGIN = "controller=authentication&back=my-account";
     static final String ADDRESS = "controller=address";
     static final String WISHLIST = "fc=module&module=blockwishlist&controller=mywishlist";
+    static final String DRESSES = "id_category=8&controller=category";
+    static final String CASUAL_DRESSES = "id_category=9&controller=category";
+    static final String SUMMER_DRESSES = "id_category=11&controller=category";
+    static final String EVENING_DRESSES = "id_category=10&controller=category";
+    static final String CONTROLLER_ORDER = "controller=order";
+
+
+
 
     /**
      * This is the constructor of the class.
@@ -42,6 +50,15 @@ public final class UrlBuilder {
         map.put("login", ReadAppFile.getInstance().getUrl(URL_BASE).concat(LOGIN));
         map.put("address", ReadAppFile.getInstance().getUrl(URL_BASE).concat(ADDRESS));
         map.put("wishlist", ReadAppFile.getInstance().getUrl(URL_BASE).concat(WISHLIST));
+        map.put("dresses", ReadAppFile.getInstance().getUrl(URL_BASE).concat(DRESSES));
+        map.put("casualDresses", ReadAppFile.getInstance().getUrl(URL_BASE).concat(CASUAL_DRESSES));
+        map.put("summerDresses", ReadAppFile.getInstance().getUrl(URL_BASE).concat(SUMMER_DRESSES));
+        map.put("eveningDresses", ReadAppFile.getInstance().getUrl(URL_BASE).concat(EVENING_DRESSES));
+        map.put("controlOrder", ReadAppFile.getInstance().getUrl(URL_BASE).concat(CONTROLLER_ORDER));
+
+
+
+
         return map.get(url);
     }
 }
