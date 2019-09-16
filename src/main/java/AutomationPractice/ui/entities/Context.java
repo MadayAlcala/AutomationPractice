@@ -9,7 +9,6 @@ package AutomationPractice.ui.entities;
 public class Context {
     private Address address;
 
-
     /**
      * Constructor class.
      */
@@ -17,9 +16,9 @@ public class Context {
         this.address = new Address();
     }
 
-
     /**
      * Metod return the class address.
+     *
      * @return address class.
      */
     public Address getAddress() {
