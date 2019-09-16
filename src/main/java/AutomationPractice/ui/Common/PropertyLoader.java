@@ -11,7 +11,13 @@ import java.util.Properties;
  * @author Maday Alcala.
  * @version 0.0.1
  */
-public class PropertyLoader {
+public final class PropertyLoader {
+
+    /**
+     * This is the constructor of the class.
+     */
+    private PropertyLoader() {
+    }
 
     /**
      * This method is in charge to load File information.

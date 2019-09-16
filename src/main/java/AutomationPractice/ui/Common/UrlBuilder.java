@@ -9,11 +9,17 @@ import java.util.Map;
  * @author Maday Alcala.
  * @version 0.0.1
  */
-public class UrlBuilder {
+public final class UrlBuilder {
     static final String URL_BASE = "url";
     static final String LOGIN = "controller=authentication&back=my-account";
     static final String ADDRESS = "controller=address";
     static final String WISHLIST = "fc=module&module=blockwishlist&controller=mywishlist";
+
+    /**
+     * This is the constructor of the class.
+     */
+    private UrlBuilder() {
+    }
 
     /**
      * This Method build an utl and return the necessary url.

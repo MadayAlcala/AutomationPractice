@@ -16,7 +16,7 @@ public final class PageTransporter {
     /**
      * This is the empty constructor according to checkstyle.
      */
-    public PageTransporter() {
+    private PageTransporter() {
     }
 
     /**
