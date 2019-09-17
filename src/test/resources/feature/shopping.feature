@@ -7,7 +7,7 @@ Feature: Shopping
 
   @signOut
   Scenario Outline: Order a Shopping
-    Given The user goes to "<dresstype>" page
+    Given The user goes to "<dressType>" page
     When The user Choose a dress
     Then The user quantity of orders should be 1
     When The user accept the terms of service check
@@ -19,7 +19,7 @@ Feature: Shopping
     Then The user should see this success message: "Your order on My Store is complete."
     And The user should see the order history
     Examples: dresses with valid pages
-      | dresstype      |
+      | dressType      |
       | summerDresses  |
       | casualDresses  |
       | eveningDresses |
