@@ -32,7 +32,6 @@ public final class UrlBuilder {
     static final String T_SHIRTS = "id_category=5&controller=category";
     static final String BLOUSES = "id_category=7&controller=category";
 
-
     /**
      * This is the constructor of the class.
      */

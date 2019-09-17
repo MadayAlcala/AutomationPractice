@@ -36,7 +36,6 @@ public class LoginSteps {
     @Given("The user goes to \"([^\"]*)\" page")
     public void initializeLoginPage(final String url) {
         PageTransporter.goToUrl(url);
-
     }
 
     /**
