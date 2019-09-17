@@ -21,11 +21,14 @@ import org.openqa.selenium.support.FindBy;
  * @version 0.0.1
  */
 public class ShoppingActions extends BasePage {
-    @FindBy(xpath = "//*[@id=\"center_column\"]/ul/li//span[contains(text(), \"Add to cart\")]")
+    @FindBy(xpath = "//span[contains(.,'Add to cart')]")
     private WebElement addToCartBtn;
 
     @FindBy(xpath = "//span[@title=\"Continue shopping\"]")
     private WebElement continueShopingBtn;
+
+    @FindBy(css = ".available-now")
+    private WebElement available;
 
     /**
      * This method is used to go to cart.
@@ -39,5 +42,12 @@ public class ShoppingActions extends BasePage {
      */
     public void getContinueShopingBtn() {
         continueShopingBtn.click();
+    }
+
+    /**
+     * This method is used to verify if a product is available.
+     */
+    public void getAvailable() {
+        available.click();
     }
 }

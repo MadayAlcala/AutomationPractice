@@ -5,19 +5,23 @@ Feature: Shopping
     When The user fills the form with "email" and "password"
     Then Username should appear in the left panel
 
-  Scenario: Order a Shopping
-    Given The user goes to "summerDresses" page
-      And The user Choose a summer dress
-    Given The user goes to "casualDresses" page
-      And The user choose a casual dress
-    Given The user goes to "eveningDresses" page
-      And The user casual a evening dress
-    Then The cart sum of product is equal to the next information
-      | TotalProductsPrice | $105.97 |
-      | TotalPrice         | $107.97 |
-      | TotalShipping      | $2.00   |
-
+  @signOut
+  Scenario Outline: Order a Shopping
+    Given The user goes to "<dressType>" page
+    When The user Choose a dress
+    Then The user quantity of orders should be 1
     When The user accept the terms of service check
-      And The user choose a payment method
+    When The user choose a bank payment method
+    Then The user should see "BANK-WIRE PAYMENT." heading
+    When The user choose a check payment method
+    Then The user should see "CHECK PAYMENT" heading
+    When The user proceed with the order
     Then The user should see this success message: "Your order on My Store is complete."
-      And The user should see the order history with the number 41
+    And The user should see the order history
+    Examples: dresses with valid pages
+      | dressType      |
+      | summerDresses  |
+      | casualDresses  |
+      | eveningDresses |
+      | tShirts        |
+      | blouses        |

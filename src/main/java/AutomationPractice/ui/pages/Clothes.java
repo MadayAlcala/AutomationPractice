@@ -25,7 +25,7 @@ import java.util.List;
  */
 public class Clothes extends BasePage {
 
-    @FindBy(xpath = "//*[@id=\"center_column\"]/ul/li")
+    @FindBy(css = "#center_column")
     private List<WebElement> dressesCount;
 
     /**
@@ -38,29 +38,11 @@ public class Clothes extends BasePage {
     }
 
     /**
-     * This method is used to choose a casual dress.
-     *
-     * @param dressNum is the num of the dress.
-     */
-    public void getCasualDressProduct(final int dressNum) {
-        driver.findElement(By.xpath("//*[@id=\"center_column\"]/ul/li[" + dressNum + "]")).click();
-    }
-
-    /**
      * This method is used to choose a evening dress.
      *
      * @param dressNum is the num of the dress.
      */
-    public void getEveningDressProduct(final int dressNum) {
-        driver.findElement(By.xpath("//*[@id=\"center_column\"]/ul/li[" + dressNum + "]")).click();
-    }
-
-    /**
-     * This method is used to choose a summer dress.
-     *
-     * @param dressNum is the num of the dress.
-     */
-    public void getSummerDressProduct(final int dressNum) {
+    public void getDressProduct(final int dressNum) {
         driver.findElement(By.xpath("//*[@id=\"center_column\"]/ul/li[" + dressNum + "]")).click();
     }
 }

@@ -50,29 +50,32 @@ public class CartSummary extends BasePage {
     @FindBy(xpath = "//a[@class=\"fancybox-item fancybox-close\"]")
     private WebElement cartSummTermsOfServiceDialogClose;
 
-    @FindBy(xpath = "//a[@title=\"Pay by bank wire\"]")
+    @FindBy(css = ".bankwire")
     private WebElement cartSummPayByBankWire;
 
-    @FindBy(xpath = "//a[@title=\"Pay by check.\"]")
+    @FindBy(css = ".cheque")
     private WebElement cartSummPayByCheck;
 
-    @FindBy(xpath = "//h3[contains(text(), \"Bank-wire payment.\")]")
+    @FindBy(css = ".page-subheading")
     private WebElement cartSummPayByBankWireConfirm;
 
-    @FindBy(xpath = "//h3[contains(text(), \"Check payment\")]")
+    @FindBy(css = ".page-subheading")
     private WebElement cartSummPayByCheckConfirm;
 
     @FindBy(xpath = "//button[@type=\"submit\"]/span[contains(text(), \"I confirm my order\")]")
     private WebElement cartSummConfirmOrderBtn;
 
-    @FindBy(xpath = "//a[@href=\"http://automationpractice.com/index.php?controller=order&step=3\"]")
+    @FindBy(css = ".button-exclusive")
     private WebElement cartSummOtherPaymentMethods;
 
-    @FindBy(xpath = "//p[contains(text(), \"Your order on My Store is complete.\")]")
+    @FindBy(css = ".alert")
     private WebElement cartSummSuccessMsg;
 
     @FindBy(xpath = "//table[@id=\"cart_summary\"]/tbody/tr")
     private List<WebElement> cartSummTotalProductsNum;
+
+    @FindBy(xpath = "#our_price_display")
+    private WebElement oficialPrice;
 
     /**
      * This method return the total price of products.
