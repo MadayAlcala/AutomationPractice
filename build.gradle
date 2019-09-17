@@ -1,0 +1,47 @@
+plugins {
+    id 'java'
+    id 'checkstyle'
+}
+
+group 'AT10'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+// Cucumber Configuration Task.
+configurations {
+    cucumberRuntime {
+        extendsFrom testImplementation
+    }
+}
+
+task cucumber() {
+    dependsOn assemble, compileTestJava
+    doLast {
+        javaexec {
+            main = "cucumber.api.cli.Main"
+            classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
+            args = ['--plugin', 'pretty', '--glue', 'gradle.cucumber', 'src/test/resources']
+        }
+    }
+}
+
+dependencies {
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
+    compile group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '1.7.2'
+    compile group: 'info.cukes', name: 'cucumber-java', version: '1.2.5'
+    compile group: 'info.cukes', name: 'cucumber-testng', version: '1.2.5'
+    compile 'org.hamcrest:hamcrest:2.1'
+    compile group: 'net.masterthought', name: 'cucumber-reporting', version: '4.6.0'
+    compile group: 'log4j', name: 'log4j', version: '1.2.16'
+    compile group: 'info.cukes', name: 'cucumber-picocontainer', version: '1.2.5'
+    testCompile group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.28'
+}
+
+checkstyle {
+    toolVersion = '8.1'
+}
