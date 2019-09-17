@@ -33,34 +33,30 @@ public class ShoppingSteps {
     private Account account;
 
     /**
-     * This method is for choose a summer dress.
+     * This method is for choose a dress.
      */
-    @When("^The user Choose a summer dress$")
+    @When("^The user Choose a dress$")
     public void choosingSummerDress() {
         clothes = new Clothes();
-        cart = new Cart();
         shoppingActions = new ShoppingActions();
         summary = new CartSummary();
-        account = new Account();
+        cart = new Cart();
         shoppingActions.getAvailable();
-        clothes.getSummerDressProduct(1);
+        clothes.getDressProduct(1);
         shoppingActions.getAddToCartBtn();
         shoppingActions.getContinueShopingBtn();
-        cart.getCartTab();
-        Assert.assertEquals(cart.getCartProductsQty().size(), 1);
     }
 
-//    /**
-//     * This method is for test the data.
-//     *
-//     * @param cartsSum with the price values.
-//     */
-//    @Then("^The cart sum of product is equal to the next information$")
-//    public void cartSummarytotalPrice(final Map<String, String> cartsSum) {
-//        Assert.assertEquals(summary.getCartSummTotalProductsPrice(), cartsSum.get("TotalProductsPrice"));
-//        Assert.assertEquals(summary.getCartSummaryTotalPrice(), cartsSum.get("TotalPrice"));
-//        Assert.assertEquals(summary.getCartSummTotalShipping(), cartsSum.get("TotalShipping"));
-//    }
+    /**
+     * This method is used to verify the correct quantity of an order.
+     *
+     * @param quantity that represent the quantity of the order.
+     */
+    @Then("^The user quantity of orders should be (\\d+)$")
+    public void verifyOrderQuantity(final int quantity) {
+        cart.getCartTab();
+        Assert.assertEquals(cart.getCartProductsQty().size(), quantity);
+    }
 
     /**
      * This method is for accept the terms condition.
@@ -76,35 +72,55 @@ public class ShoppingSteps {
     /**
      * This method is for choose a payment meethod.
      */
-    @When("^The user choose a payment method$")
-    public void choosingPaymentMethod() {
+    @When("^The user choose a bank payment method$")
+    public void chooseBankPaymentMethod() {
         summary.getCartSummPayByBankWire();
-        Assert.assertEquals(summary.getCartSummPayByBankWireConfirm(), "BANK-WIRE PAYMENT.");
-        summary.getCartSummOtherPaymentMethods();
-        summary.getCartSummPayByCheck();
-        Assert.assertEquals(summary.getCartSummPayByCheckConfirm(), "CHECK PAYMENT");
     }
 
     /**
-     * This method is for check the succes message.
+     * This method is to compare the bank payment heading.
+     *
+     * @param heading that represent the bank payment name.
+     */
+    @Then("^The user should see \"([^\"]*)\" heading$")
+    public void verifyHeading(final String heading) {
+        Assert.assertEquals(summary.getCartSummPayByBankWireConfirm(), heading);
+    }
+
+    /**
+     * This method is used for choose a check payment method.
+     */
+    @When("^The user choose a check payment method$")
+    public void choosingPaymentMethod() {
+        summary.getCartSummOtherPaymentMethods();
+        summary.getCartSummPayByCheck();
+    }
+
+    /**
+     * This method is used to continue with the order.
+     */
+    @When("^The user proceed with the order$")
+    public void proceedWithOrder() {
+        summary.getCartSummConfirmOrderBtn();
+    }
+
+    /**
+     * This method is for check the succes message of a complete order.
      *
      * @param successMessage of the order.
      */
     @Then("^The user should see this success message: \"([^\"]*)\"$")
     public void successMessage(final String successMessage) {
-        summary.getCartSummConfirmOrderBtn();
         Assert.assertEquals(summary.getCartSummSuccessMsg(), successMessage);
     }
 
     /**
      * this method is for check the order in OrderHistory.
-     *
-     * @param number that represetn the increase of the order.
      */
-    @Then("^The user should see the order history with the number (\\d+)$")
-    public void orderHistoryIncresed(final int number) {
+    @Then("^The user should see the order history")
+    public void orderHistoryIncresed() {
+        account = new Account();
         account.getAccountBtn();
         account.getAccountOrderHistoryBtn();
-        Assert.assertEquals(account.getAccountOrdersLis().size(), number);
     }
 }

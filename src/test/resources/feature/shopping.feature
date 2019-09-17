@@ -8,15 +8,16 @@ Feature: Shopping
   @signOut
   Scenario Outline: Order a Shopping
     Given The user goes to "<dresstype>" page
-    And The user Choose a summer dress
-#    Then The cart sum of product is equal to the next information
-#      | TotalProductsPrice | $105.97 |
-#      | TotalPrice         | $107.97 |
-#      | TotalShipping      | $2.00   |
+    When The user Choose a dress
+    Then The user quantity of orders should be 1
     When The user accept the terms of service check
-    And The user choose a payment method
+    When The user choose a bank payment method
+    Then The user should see "BANK-WIRE PAYMENT." heading
+    When The user choose a check payment method
+    Then The user should see "CHECK PAYMENT" heading
+    When The user proceed with the order
     Then The user should see this success message: "Your order on My Store is complete."
-#    And The user should see the order history with the number 53
+    And The user should see the order history
     Examples: dresses with valid pages
       | dresstype      |
       | summerDresses  |
