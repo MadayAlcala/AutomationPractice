@@ -21,7 +21,7 @@ import org.apache.log4j.Logger;
  */
 public final class Log {
     private static Log instance;
-    private static final Logger log = Logger.getLogger(Log.class);
+    private static Logger log = Logger.getLogger(Log.class);
 
     /**
      * Private constructor for the Singleton pattern.

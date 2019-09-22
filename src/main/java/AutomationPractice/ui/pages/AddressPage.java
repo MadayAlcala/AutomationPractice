@@ -130,6 +130,11 @@ public class AddressPage extends BasePage {
         firstNameTxtField.sendKeys(firstName);
     }
 
+    /**
+     * This method is in charge of return the address' first name.
+     *
+     * @return first name.
+     */
     private String getFirstNameTxt() {
         return firstName.getText();
     }
@@ -144,6 +149,11 @@ public class AddressPage extends BasePage {
         lastNameTxtField.sendKeys(lastName);
     }
 
+    /**
+     * This method is in charge of return the address' last name.
+     *
+     * @return last name.
+     */
     private String getLastNameTxt() {
         return lastName.getText();
     }
@@ -158,6 +168,11 @@ public class AddressPage extends BasePage {
         companyTxtField.sendKeys(company);
     }
 
+    /**
+     * This method is in charge of return the address' company.
+     *
+     * @return company.
+     */
     private String getCompanyTxt() {
         return company.getText();
     }
@@ -171,6 +186,11 @@ public class AddressPage extends BasePage {
         address1TxtField.sendKeys(address1);
     }
 
+    /**
+     * This method is in charge of return the address' main address.
+     *
+     * @return address1 that represent the main address.
+     */
     private String getAddress1Txt() {
         return address1.getText();
     }
@@ -184,12 +204,13 @@ public class AddressPage extends BasePage {
         address2TxtField.sendKeys(address2);
     }
 
+    /**
+     * This method is in charge of return the address' optional.
+     *
+     * @return address2 that is an optional address.
+     */
     private String getAddress2Txt() {
         return address2.getText();
-    }
-
-    private String getCityTxt() {
-        return city.getText();
     }
 
     /**
@@ -202,6 +223,15 @@ public class AddressPage extends BasePage {
     }
 
     /**
+     * This method is in charge of return the address' city.
+     *
+     * @return city.
+     */
+    private String getCityTxt() {
+        return city.getText();
+    }
+
+    /**
      * This method sets the state in the text box of the address form.
      *
      * @param state 'state', that represent an state.
@@ -210,6 +240,11 @@ public class AddressPage extends BasePage {
         stateTxtField.sendKeys(state);
     }
 
+    /**
+     * This method is in charge of return the address' state.
+     *
+     * @return state.
+     */
     private String getIdStateTxt() {
         return state.getText();
     }
@@ -223,6 +258,11 @@ public class AddressPage extends BasePage {
         postcodeTxtField.sendKeys(postCode);
     }
 
+    /**
+     * This method is in charge of return the address' post code.
+     *
+     * @return post code.
+     */
     private String getPostCodeTxt() {
         return postCode.getText();
     }
@@ -236,6 +276,11 @@ public class AddressPage extends BasePage {
         countryTxtField.sendKeys(country);
     }
 
+    /**
+     * This method is in charge of return the address' country.
+     *
+     * @return country.
+     */
     private String getCountryTxt() {
         return country.getText();
     }
@@ -249,6 +294,11 @@ public class AddressPage extends BasePage {
         phoneTxtField.sendKeys(phone);
     }
 
+    /**
+     * This method is in charge of return the address' main phone.
+     *
+     * @return phone that represent the main phone.
+     */
     private String getPhoneTxt() {
         return phone.getText();
     }
@@ -262,6 +312,11 @@ public class AddressPage extends BasePage {
         phoneMobileTxtField.sendKeys(phoneMovil);
     }
 
+    /**
+     * This method is in charge of return the address' phone mobile.
+     *
+     * @return phone mobile that represent an optional phone..
+     */
     private String getPhoneMobileTxt() {
         return phoneMobile.getText();
     }
@@ -280,12 +335,16 @@ public class AddressPage extends BasePage {
      *
      * @param alias 'alias', that represent an alias.
      */
-
     private void setAlias(final String alias) {
         aliasTxtField.clear();
         aliasTxtField.sendKeys(alias);
     }
 
+    /**
+     * This method is in charge of return the address' alias.
+     *
+     * @return alias.
+     */
     public String getAliasTxt() {
         return alias.getText();
     }
