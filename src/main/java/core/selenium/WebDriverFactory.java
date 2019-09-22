@@ -28,7 +28,7 @@ import static core.selenium.webdrivers.BrowserType.FIREFOX;
  * @author Maday Alcala
  * @version 0.0.1
  */
-public final class WebDriverFactory {
+final class WebDriverFactory {
 
     /**
      * This is the empty constructor according to checkstyle.

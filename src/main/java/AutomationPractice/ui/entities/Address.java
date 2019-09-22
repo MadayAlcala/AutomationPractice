@@ -10,8 +10,6 @@
 
 package AutomationPractice.ui.entities;
 
-import AutomationPractice.ui.StrategySetter;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -22,8 +20,8 @@ import java.util.Map;
  * @version 0.0.1
  */
 public class Address {
-    private String firstname;
-    private String lastname;
+    private String firstName;
+    private String lastName;
     private String company;
     private String mainAddress;
     private String secondAddress;
@@ -37,39 +35,39 @@ public class Address {
     private String alias;
 
     /**
-     * This method is in charge of return the address' firstname.
+     * This method is in charge of return the address' firstName.
      *
-     * @return firstname.
+     * @return firstName.
      */
     private String getFirstName() {
-        return firstname;
+        return firstName;
     }
 
     /**
-     * This method is in charge of return the address' firstname.
+     * This method is in charge of return the address' firstName.
      *
-     * @param firstname firstname.
+     * @param firstName firstName.
      */
-    private void setFirstname(final String firstname) {
-        this.firstname = firstname;
+    private void setFirstName(final String firstName) {
+        this.firstName = firstName;
     }
 
     /**
-     * This method is in charge of return the address' lastname.
+     * This method is in charge of return the address' lastName.
      *
-     * @return lastname.
+     * @return lastName.
      */
     private String getLastName() {
-        return lastname;
+        return lastName;
     }
 
     /**
-     * This method is in charge of set the address' lastname.
+     * This method is in charge of set the address' lastName.
      *
-     * @param lastname lastname.
+     * @param lastName lastName.
      */
-    private void setLastname(final String lastname) {
-        this.lastname = lastname;
+    private void setLastName(final String lastName) {
+        this.lastName = lastName;
     }
 
     /**
@@ -221,7 +219,7 @@ public class Address {
      *
      * @return phoneMobile that represents an optional phone.
      */
-    public String getPhoneMobile() {
+    private String getPhoneMobile() {
         return phoneMobile;
     }
 
@@ -232,15 +230,6 @@ public class Address {
      */
     private void setPhoneMobile(final String phoneMobile) {
         this.phoneMobile = phoneMobile;
-    }
-
-    /**
-     * This method is in charge of return the address' additionalInfo.
-     *
-     * @return additionalInfo that could be any other additional information.
-     */
-    private String getAdditionalInfo() {
-        return additionalInfo;
     }
 
     /**
@@ -276,8 +265,8 @@ public class Address {
      * @param accountMap that represent all the values for the elements.
      */
     public void setAccountInformation(final Map<String, String> accountMap) {
-        HashMap<String, StrategySetter> strategyMap = composeStrategyMap(accountMap);
-        accountMap.keySet().forEach(key -> strategyMap.get(key).executeMethod());
+        HashMap<String, Runnable> strategyMap = composeStrategyMap(accountMap);
+        accountMap.keySet().forEach(key -> strategyMap.get(key).run());
     }
 
     /**
@@ -286,10 +275,10 @@ public class Address {
      * @param accountMap that represents the values for the map.
      * @return strategy map.
      */
-    private HashMap<String, StrategySetter> composeStrategyMap(final Map<String, String> accountMap) {
-        HashMap<String, StrategySetter> strategyMap = new HashMap<>();
-        strategyMap.put("firstname", () -> setFirstname(accountMap.get("firstname")));
-        strategyMap.put("lastname", () -> setLastname(accountMap.get("lastname")));
+    private HashMap<String, Runnable> composeStrategyMap(final Map<String, String> accountMap) {
+        HashMap<String, Runnable> strategyMap = new HashMap<>();
+        strategyMap.put("firstname", () -> setFirstName(accountMap.get("firstname")));
+        strategyMap.put("lastname", () -> setLastName(accountMap.get("lastname")));
         strategyMap.put("company", () -> setCompany(accountMap.get("company")));
         strategyMap.put("address1", () -> setMainAddress(accountMap.get("mainAddress")));
         strategyMap.put("address2", () -> setSecondAddress(accountMap.get("secondAddress")));
@@ -309,8 +298,8 @@ public class Address {
      *
      * @return 'strategyMap' that contains all the variables of the address.
      */
-    public HashMap<String, StrategySetter> composeStrategyMap() {
-        HashMap<String, StrategySetter> strategyMap = new HashMap<>();
+    public HashMap<String, Runnable> composeStrategyMap() {
+        HashMap<String, Runnable> strategyMap = new HashMap<>();
         strategyMap.get(getFirstName());
         strategyMap.get(getLastName());
         strategyMap.get(getCompany());

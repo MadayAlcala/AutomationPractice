@@ -52,7 +52,7 @@ public final class WebDriverConfig {
     /**
      * This method reads browser properties and initializes the basic browser characteristics.
      */
-    public void initialize() {
+    private void initialize() {
         properties = PropertyLoader.loadProperty(BROWSER_PROPERTIES);
     }
 

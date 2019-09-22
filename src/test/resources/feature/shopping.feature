@@ -16,8 +16,7 @@ Feature: Shopping
       | TotalProductsPrice | $105.97 |
       | TotalPrice         | $107.97 |
       | TotalShipping      | $2.00   |
-
     When The user accept the terms of service check
       And The user choose a payment method
     Then The user should see this success message: "Your order on My Store is complete."
-      And The user should see the order history with the number 41
+      And The user should see the order history with the number 155

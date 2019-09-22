@@ -31,7 +31,7 @@ public class Account extends BasePage {
     private WebElement accountOrderHistoryBtn;
 
     /**
-     * This methos is used for obtain the order list.
+     * This method is used for obtain the order list.
      *
      * @return a list of 'orderList'.
      */

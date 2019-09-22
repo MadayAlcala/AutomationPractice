@@ -155,7 +155,7 @@ public class CartSummary extends BasePage {
     }
 
     /**
-     * This methos is used to confirm a pay bay check.
+     * This method is used to confirm a pay bay check.
      *
      * @return a String with cartSumm of check Pay.
      */

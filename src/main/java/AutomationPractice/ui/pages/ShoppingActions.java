@@ -15,7 +15,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 /**
- * ShoppingActions class, this class is in charge of the shopping acctions.
+ * ShoppingActions class, this class is in charge of the shopping actions.
  *
  * @author Maday Alcala
  * @version 0.0.1
@@ -25,7 +25,7 @@ public class ShoppingActions extends BasePage {
     private WebElement addToCartBtn;
 
     @FindBy(xpath = "//span[@title=\"Continue shopping\"]")
-    private WebElement continueShopingBtn;
+    private WebElement continueShoppingBtn;
 
     /**
      * This method is used to go to cart.
@@ -37,7 +37,7 @@ public class ShoppingActions extends BasePage {
     /**
      * This method is used to continue with a shopping.
      */
-    public void getContinueShopingBtn() {
-        continueShopingBtn.click();
+    public void getContinueShoppingBtn() {
+        continueShoppingBtn.click();
     }
 }

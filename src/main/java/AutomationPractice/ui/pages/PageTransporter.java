@@ -21,7 +21,6 @@ import org.openqa.selenium.WebDriver;
  * @version 0.0.1
  */
 public final class PageTransporter {
-    private static WebDriver webDriver;
 
     /**
      * This is the empty constructor according to checkstyle.
@@ -35,7 +34,7 @@ public final class PageTransporter {
      * @param url The parameter url defines a input url.
      */
     public static void goToUrl(final String url) {
-        webDriver = WebDriverManager.getInstance().getWebDriver();
+        WebDriver webDriver = WebDriverManager.getInstance().getWebDriver();
         webDriver.navigate().to(UrlBuilder.getUrlReader(url));
     }
 }

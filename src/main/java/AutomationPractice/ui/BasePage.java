@@ -21,12 +21,12 @@ import org.openqa.selenium.support.PageFactory;
  * @version 0.0.1
  */
 public abstract class BasePage {
-    protected WebDriver driver;
+    protected final WebDriver driver;
 
     /**
      * This method initializes the base class.
      */
-    public BasePage() {
+    protected BasePage() {
         this.driver = WebDriverManager.getInstance().getWebDriver();
         PageFactory.initElements(driver, this);
     }

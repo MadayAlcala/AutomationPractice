@@ -51,7 +51,7 @@ public class ShoppingSteps {
         Assert.assertEquals(clothes.getDressesCount().size(), 3);
         clothes.getSummerDressProduct(1);
         shoppingActions.getAddToCartBtn();
-        shoppingActions.getContinueShopingBtn();
+        shoppingActions.getContinueShoppingBtn();
         cart.getCartTab();
         Assert.assertEquals(cart.getCartProductsQty().size(), 1);
     }
@@ -64,7 +64,7 @@ public class ShoppingSteps {
         PageTransporter.goToUrl("casualDresses");
         clothes.getCasualDressProduct(1);
         shoppingActions.getAddToCartBtn();
-        shoppingActions.getContinueShopingBtn();
+        shoppingActions.getContinueShoppingBtn();
         cart.getCartTab();
         Assert.assertEquals(cart.getCartProductsQty().size(), 2);
     }
@@ -79,7 +79,7 @@ public class ShoppingSteps {
         clothes.getEveningDressProduct(1);
         shoppingActions.getAddToCartBtn();
 
-        shoppingActions.getContinueShopingBtn();
+        shoppingActions.getContinueShoppingBtn();
         cart.getCartTab();
 
         Assert.assertEquals(cart.getCartProductsQty().size(), 3);
@@ -91,7 +91,7 @@ public class ShoppingSteps {
      * @param cartsSum with the price values.
      */
     @Then("^The cart sum of product is equal to the next information$")
-    public void cartSummarytotalPrice(final Map<String, String> cartsSum) {
+    public void cartSummaryTotalPrice(final Map<String, String> cartsSum) {
         Assert.assertEquals(summary.getCartSummTotalProductsPrice(), cartsSum.get("TotalProductsPrice"));
         Assert.assertEquals(summary.getCartSummaryTotalPrice(), cartsSum.get("TotalPrice"));
         Assert.assertEquals(summary.getCartSummTotalShipping(), cartsSum.get("TotalShipping"));
@@ -109,7 +109,7 @@ public class ShoppingSteps {
     }
 
     /**
-     * This method is for choose a payment meethod.
+     * This method is for choose a payment method.
      */
     @When("^The user choose a payment method$")
     public void choosingPaymentMethod() {
@@ -121,7 +121,7 @@ public class ShoppingSteps {
     }
 
     /**
-     * This method is for check the succes message.
+     * This method is for check the success message.
      *
      * @param successMessage of the order.
      */
@@ -134,10 +134,10 @@ public class ShoppingSteps {
     /**
      * this method is for check the order in OrderHistory.
      *
-     * @param number that represetn the increase of the order.
+     * @param number that represent the increase of the order.
      */
     @Then("^The user should see the order history with the number (\\d+)$")
-    public void orderHistoryIncresed(final int number) {
+    public void orderHistoryIncreased(final int number) {
         account.getAccountBtn();
         account.getAccountOrderHistoryBtn();
         account.getAccountBtn();

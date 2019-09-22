@@ -11,7 +11,6 @@
 package steps;
 
 import AutomationPractice.ui.entities.Context;
-import AutomationPractice.ui.pages.AddressFormAbstract;
 import AutomationPractice.ui.pages.AddressPage;
 import AutomationPractice.ui.pages.PageTransporter;
 import cucumber.api.java.en.Then;
@@ -27,8 +26,8 @@ import java.util.Map;
  * @version 0.0.1
  */
 public class AddressSteps {
-    private Context context;
-    private AddressFormAbstract addressForm;
+    private final Context context;
+    private AddressPage addressPage;
 
     /**
      * This is the constructor.
@@ -47,7 +46,7 @@ public class AddressSteps {
     @When("^The user goes to create \"([^\"]*)\" form$")
     public void goToAddressPage(final String url) {
         PageTransporter.goToUrl(url);
-        addressForm = new AddressPage();
+        addressPage = new AddressPage();
     }
 
     /**
@@ -58,8 +57,8 @@ public class AddressSteps {
     @When("^The user fills the form with the following information$")
     public void crateNewAddress(final Map<String, String> addressMap) {
         context.getAddress().setAccountInformation(addressMap);
-        addressForm.setAccountInformation(addressMap);
-        addressForm.clickSubmitBtn();
+        addressPage.setAccountInformation(addressMap);
+        addressPage.clickSubmitBtn();
     }
 
     /**
@@ -67,6 +66,6 @@ public class AddressSteps {
      */
     @Then("^The address information should be displayed in the Address page$")
     public void verifyTheAddressInformation() {
-        Assert.assertEquals(addressForm.composeStrategyMap(), context.getAddress().composeStrategyMap());
+        Assert.assertEquals(addressPage.composeStrategyMap(), context.getAddress().composeStrategyMap());
     }
 }

@@ -27,10 +27,10 @@ public class LoginPage extends BasePage {
     private WebElement signInLink;
 
     @FindBy(id = "email")
-    private WebElement emailTxtb;
+    private WebElement emailTxt;
 
     @FindBy(id = "passwd")
-    private WebElement passwordTxtb;
+    private WebElement passwordTxt;
 
     @FindBy(css = "#SubmitLogin > span")
     private WebElement loginBtn;
@@ -70,8 +70,8 @@ public class LoginPage extends BasePage {
      *
      * @param email 'username', that represent a valid email.
      */
-    public void setEmail(final String email) {
-        emailTxtb.sendKeys(email);
+    private void setEmail(final String email) {
+        emailTxt.sendKeys(email);
     }
 
     /**
@@ -79,8 +79,8 @@ public class LoginPage extends BasePage {
      *
      * @param password 'password', that represent a valid password for the email.
      */
-    public void setPassword(final String password) {
-        passwordTxtb.sendKeys(password);
+    private void setPassword(final String password) {
+        passwordTxt.sendKeys(password);
     }
 
     /**

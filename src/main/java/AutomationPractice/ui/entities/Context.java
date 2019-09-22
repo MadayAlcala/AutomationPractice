@@ -17,7 +17,7 @@ package AutomationPractice.ui.entities;
  * @version 0.0.1
  */
 public class Context {
-    private Address address;
+    private final Address address;
 
     /**
      * Constructor class.
@@ -27,7 +27,7 @@ public class Context {
     }
 
     /**
-     * Metod return the class address.
+     * Method return an address' object.
      *
      * @return address class.
      */

@@ -43,7 +43,7 @@ public class LoginSteps {
      * This method fills in the user data to be able to log in.
      *
      * @param email    'email', represents the email of an user.
-     * @param password 'password', represents the password according to the emal.
+     * @param password 'password', represents the password according to the email.
      */
     @When("^The user fills the form with \"([^\"]*)\" and \"([^\"]*)\"$")
     public void fillLogInForm(final String email, final String password) {

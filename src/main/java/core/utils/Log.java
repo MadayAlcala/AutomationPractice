@@ -21,7 +21,7 @@ import org.apache.log4j.Logger;
  */
 public final class Log {
     private static Log instance;
-    private static Logger log = Logger.getLogger(Log.class);
+    private static final Logger log = Logger.getLogger(Log.class);
 
     /**
      * Private constructor for the Singleton pattern.
@@ -33,7 +33,7 @@ public final class Log {
     /**
      * This method initializes the logger characteristics.
      */
-    public void initialize() {
+    private void initialize() {
         log.setLevel(Level.ALL);
     }
 

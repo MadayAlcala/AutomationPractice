@@ -10,8 +10,12 @@
 
 package AutomationPractice.ui.pages;
 
+import AutomationPractice.ui.BasePage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * AddressPage class, this class is in charge of the address elements.
@@ -19,45 +23,45 @@ import org.openqa.selenium.support.FindBy;
  * @author Maday Alcala
  * @version 0.0.1
  */
-public class AddressPage extends AddressFormAbstract {
+public class AddressPage extends BasePage {
     @FindBy(id = "firstname")
-    private WebElement firstnametxtField;
+    private WebElement firstNameTxtField;
 
     @FindBy(id = "lastname")
-    private WebElement lastnametxtField;
+    private WebElement lastNameTxtField;
 
     @FindBy(id = "company")
-    private WebElement companytxtField;
+    private WebElement companyTxtField;
 
     @FindBy(id = "address1")
-    private WebElement address1txtField;
+    private WebElement address1TxtField;
 
     @FindBy(id = "address2")
-    private WebElement address2txtField;
+    private WebElement address2TxtField;
 
     @FindBy(id = "city")
-    private WebElement citytxtField;
+    private WebElement cityTxtField;
 
     @FindBy(id = "id_state")
-    private WebElement statetxtField;
+    private WebElement stateTxtField;
 
     @FindBy(id = "postcode")
-    private WebElement postcodetxtField;
+    private WebElement postcodeTxtField;
 
     @FindBy(id = "id_country")
-    private WebElement countrytxtField;
+    private WebElement countryTxtField;
 
     @FindBy(id = "phone")
-    private WebElement phonetxtField;
+    private WebElement phoneTxtField;
 
     @FindBy(id = "phone_mobile")
-    private WebElement phoneMobiletxtField;
+    private WebElement phoneMobileTxtField;
 
     @FindBy(id = "other")
-    private WebElement othertxtField;
+    private WebElement otherTxtField;
 
     @FindBy(id = "alias")
-    private WebElement aliastxtField;
+    private WebElement aliasTxtField;
 
     @FindBy(css = "#submitAddress > span")
     private WebElement submitBtn;
@@ -112,7 +116,6 @@ public class AddressPage extends AddressFormAbstract {
     /**
      * This method is in charge of clicking on the submit button.
      */
-    @Override
     public void clickSubmitBtn() {
         submitBtn.click();
     }
@@ -122,14 +125,12 @@ public class AddressPage extends AddressFormAbstract {
      *
      * @param firstName 'firstName', that represent an firstName.
      */
-    @Override
-    public void setFirstName(final String firstName) {
-        firstnametxtField.clear();
-        firstnametxtField.sendKeys(firstName);
+    private void setFirstName(final String firstName) {
+        firstNameTxtField.clear();
+        firstNameTxtField.sendKeys(firstName);
     }
 
-    @Override
-    public String getFirstNameTxt() {
+    private String getFirstNameTxt() {
         return firstName.getText();
     }
 
@@ -138,14 +139,12 @@ public class AddressPage extends AddressFormAbstract {
      *
      * @param lastName 'lastName', that represent an lastName.
      */
-    @Override
-    public void setLastName(final String lastName) {
-        lastnametxtField.clear();
-        lastnametxtField.sendKeys(lastName);
+    private void setLastName(final String lastName) {
+        lastNameTxtField.clear();
+        lastNameTxtField.sendKeys(lastName);
     }
 
-    @Override
-    public String getLastNameTxt() {
+    private String getLastNameTxt() {
         return lastName.getText();
     }
 
@@ -154,14 +153,12 @@ public class AddressPage extends AddressFormAbstract {
      *
      * @param company 'company', that represent an company.
      */
-    @Override
-    public void setCompany(final String company) {
-        companytxtField.clear();
-        companytxtField.sendKeys(company);
+    private void setCompany(final String company) {
+        companyTxtField.clear();
+        companyTxtField.sendKeys(company);
     }
 
-    @Override
-    public String getCompanyTxt() {
+    private String getCompanyTxt() {
         return company.getText();
     }
 
@@ -170,13 +167,11 @@ public class AddressPage extends AddressFormAbstract {
      *
      * @param address1 'address1', that represent an address1.
      */
-    @Override
-    public void setAddress1(final String address1) {
-        address1txtField.sendKeys(address1);
+    private void setAddress1(final String address1) {
+        address1TxtField.sendKeys(address1);
     }
 
-    @Override
-    public String getAddress1Txt() {
+    private String getAddress1Txt() {
         return address1.getText();
     }
 
@@ -185,18 +180,15 @@ public class AddressPage extends AddressFormAbstract {
      *
      * @param address2 'address2', that represent an address2.
      */
-    @Override
-    public void setAddress2(final String address2) {
-        address2txtField.sendKeys(address2);
+    private void setAddress2(final String address2) {
+        address2TxtField.sendKeys(address2);
     }
 
-    @Override
-    public String getAddress2Txt() {
+    private String getAddress2Txt() {
         return address2.getText();
     }
 
-    @Override
-    public String getCityTxt() {
+    private String getCityTxt() {
         return city.getText();
     }
 
@@ -205,9 +197,8 @@ public class AddressPage extends AddressFormAbstract {
      *
      * @param city 'city', that represent an city.
      */
-    @Override
-    public void setCity(final String city) {
-        citytxtField.sendKeys(city);
+    private void setCity(final String city) {
+        cityTxtField.sendKeys(city);
     }
 
     /**
@@ -215,13 +206,11 @@ public class AddressPage extends AddressFormAbstract {
      *
      * @param state 'state', that represent an state.
      */
-    @Override
-    public void setIdState(final String state) {
-        statetxtField.sendKeys(state);
+    private void setIdState(final String state) {
+        stateTxtField.sendKeys(state);
     }
 
-    @Override
-    public String getIdStateTxt() {
+    private String getIdStateTxt() {
         return state.getText();
     }
 
@@ -230,13 +219,11 @@ public class AddressPage extends AddressFormAbstract {
      *
      * @param postCode 'postCode', that represent an postCode.
      */
-    @Override
-    public void setPostCode(final String postCode) {
-        postcodetxtField.sendKeys(postCode);
+    private void setPostCode(final String postCode) {
+        postcodeTxtField.sendKeys(postCode);
     }
 
-    @Override
-    public String getPostCodeTxt() {
+    private String getPostCodeTxt() {
         return postCode.getText();
     }
 
@@ -245,13 +232,11 @@ public class AddressPage extends AddressFormAbstract {
      *
      * @param country 'country', that represent an country.
      */
-    @Override
-    public void setIdCountry(final String country) {
-        countrytxtField.sendKeys(country);
+    private void setIdCountry(final String country) {
+        countryTxtField.sendKeys(country);
     }
 
-    @Override
-    public String getCountryTxt() {
+    private String getCountryTxt() {
         return country.getText();
     }
 
@@ -260,28 +245,24 @@ public class AddressPage extends AddressFormAbstract {
      *
      * @param phone 'phone', that represent an phone.
      */
-    @Override
-    public void setPhone(final String phone) {
-        phonetxtField.sendKeys(phone);
+    private void setPhone(final String phone) {
+        phoneTxtField.sendKeys(phone);
     }
 
-    @Override
-    public String getPhoneTxt() {
+    private String getPhoneTxt() {
         return phone.getText();
     }
 
     /**
-     * This method sets the phoneMovil in the text box of the address form.
+     * This method sets the phoneMobile in the text box of the address form.
      *
-     * @param phoneMovil 'phoneMovil', that represent an phoneMovil.
+     * @param phoneMovil 'phoneMobile', that represent an phoneMobile.
      */
-    @Override
-    public void setPhoneMovil(final String phoneMovil) {
-        phoneMobiletxtField.sendKeys(phoneMovil);
+    private void setPhoneMobile(final String phoneMovil) {
+        phoneMobileTxtField.sendKeys(phoneMovil);
     }
 
-    @Override
-    public String getPhoneMovilTxt() {
+    private String getPhoneMobileTxt() {
         return phoneMobile.getText();
     }
 
@@ -290,9 +271,8 @@ public class AddressPage extends AddressFormAbstract {
      *
      * @param other 'other', that represent an other.
      */
-    @Override
-    public void setOther(final String other) {
-        othertxtField.sendKeys(other);
+    private void setOther(final String other) {
+        otherTxtField.sendKeys(other);
     }
 
     /**
@@ -300,14 +280,69 @@ public class AddressPage extends AddressFormAbstract {
      *
      * @param alias 'alias', that represent an alias.
      */
-    @Override
-    public void setAlias(final String alias) {
-        aliastxtField.clear();
-        aliastxtField.sendKeys(alias);
+
+    private void setAlias(final String alias) {
+        aliasTxtField.clear();
+        aliasTxtField.sendKeys(alias);
     }
 
-    @Override
     public String getAliasTxt() {
         return alias.getText();
+    }
+
+    /**
+     * This method is in charge of create a map for the address' elements.
+     *
+     * @param accountMap that represent all the values for the elements.
+     */
+    public void setAccountInformation(final Map<String, String> accountMap) {
+        HashMap<String, Runnable> strategyMap = composeStrategyMap(accountMap);
+        accountMap.keySet().forEach(key -> strategyMap.get(key).run());
+    }
+
+    /**
+     * This method is in charge of fill of the address' element in the map.
+     *
+     * @param accountMap that represents the values for the map.
+     * @return strategy map.
+     */
+    private HashMap<String, Runnable> composeStrategyMap(final Map<String, String> accountMap) {
+        HashMap<String, Runnable> strategyMap = new HashMap<>();
+        strategyMap.put("firstname", () -> setFirstName(accountMap.get("firstname")));
+        strategyMap.put("lastname", () -> setLastName(accountMap.get("lastname")));
+        strategyMap.put("company", () -> setCompany(accountMap.get("company")));
+        strategyMap.put("address1", () -> setAddress1(accountMap.get("address1")));
+        strategyMap.put("address2", () -> setAddress2(accountMap.get("address2")));
+        strategyMap.put("city", () -> setCity(accountMap.get("city")));
+        strategyMap.put("id_state", () -> setIdState(accountMap.get("id_state")));
+        strategyMap.put("postcode", () -> setPostCode(accountMap.get("postcode")));
+        strategyMap.put("id_country", () -> setIdCountry(accountMap.get("id_country")));
+        strategyMap.put("phone", () -> setPhone(accountMap.get("phone")));
+        strategyMap.put("phone_mobile", () -> setPhoneMobile(accountMap.get("phone_mobile")));
+        strategyMap.put("other", () -> setOther(accountMap.get("other")));
+        strategyMap.put("alias", () -> setAlias(accountMap.get("alias")));
+        return strategyMap;
+    }
+
+    /**
+     * This method build getter map with all the variables of an address.
+     *
+     * @return 'strategyMap' that contains all the variables of the address.
+     */
+    public HashMap<String, Runnable> composeStrategyMap() {
+        HashMap<String, Runnable> strategyMap = new HashMap<>();
+        strategyMap.get(getFirstNameTxt());
+        strategyMap.get(getLastNameTxt());
+        strategyMap.get(getCompanyTxt());
+        strategyMap.get(getAddress1Txt());
+        strategyMap.get(getAddress2Txt());
+        strategyMap.get(getCityTxt());
+        strategyMap.get(getIdStateTxt());
+        strategyMap.get(getPostCodeTxt());
+        strategyMap.get(getCountryTxt());
+        strategyMap.get(getPhoneTxt());
+        strategyMap.get(getPhoneMobileTxt());
+        strategyMap.get(getAliasTxt());
+        return strategyMap;
     }
 }

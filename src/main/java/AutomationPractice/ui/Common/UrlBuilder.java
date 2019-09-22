@@ -20,15 +20,14 @@ import java.util.Map;
  * @version 0.0.1
  */
 public final class UrlBuilder {
-    static final String URL_BASE = "url";
-    static final String LOGIN = "controller=authentication&back=my-account";
-    static final String ADDRESS = "controller=address";
-    static final String WISHLIST = "fc=module&module=blockwishlist&controller=mywishlist";
-    static final String DRESSES = "id_category=8&controller=category";
-    static final String CASUAL_DRESSES = "id_category=9&controller=category";
-    static final String SUMMER_DRESSES = "id_category=11&controller=category";
-    static final String EVENING_DRESSES = "id_category=10&controller=category";
-    static final String CONTROLLER_ORDER = "controller=order";
+    private static final String URL_BASE = "url";
+    private static final String LOGIN = "controller=authentication&back=my-account";
+    private static final String ADDRESS = "controller=address";
+    private static final String DRESSES = "id_category=8&controller=category";
+    private static final String CASUAL_DRESSES = "id_category=9&controller=category";
+    private static final String SUMMER_DRESSES = "id_category=11&controller=category";
+    private static final String EVENING_DRESSES = "id_category=10&controller=category";
+    private static final String CONTROLLER_ORDER = "controller=order";
 
     /**
      * This is the constructor of the class.
@@ -46,7 +45,6 @@ public final class UrlBuilder {
         Map<String, String> map = new HashMap<>();
         map.put("login", ReadAppFile.getInstance().getUrl(URL_BASE).concat(LOGIN));
         map.put("address", ReadAppFile.getInstance().getUrl(URL_BASE).concat(ADDRESS));
-        map.put("wishlist", ReadAppFile.getInstance().getUrl(URL_BASE).concat(WISHLIST));
         map.put("dresses", ReadAppFile.getInstance().getUrl(URL_BASE).concat(DRESSES));
         map.put("casualDresses", ReadAppFile.getInstance().getUrl(URL_BASE).concat(CASUAL_DRESSES));
         map.put("summerDresses", ReadAppFile.getInstance().getUrl(URL_BASE).concat(SUMMER_DRESSES));

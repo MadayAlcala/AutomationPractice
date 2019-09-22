@@ -40,7 +40,7 @@ public final class WebDriverManager {
      * @return 'instance' variable, that is an instance of WebDriverManager.
      */
     public static WebDriverManager getInstance() {
-        if (instance == null || instance.webDriver == null) {
+        if (instance == null || webDriver == null) {
             instance = new WebDriverManager();
         }
         return instance;
@@ -50,10 +50,9 @@ public final class WebDriverManager {
      * This method initializes the browser characteristics.
      */
     private void initialize() {
-        this.webDriver = WebDriverFactory.getWebDriver(WebDriverConfig.getInstance().getBrowser());
-        this.webDriver.manage().window().maximize();
-        this.webDriver.manage().timeouts().implicitlyWait(WebDriverConfig.getInstance()
-                .getImplicitWaitTime(), TimeUnit.SECONDS);
+        webDriver = WebDriverFactory.getWebDriver(WebDriverConfig.getInstance().getBrowser());
+        webDriver.manage().window().maximize();
+        webDriver.manage().timeouts().implicitlyWait(WebDriverConfig.getInstance().getImplicitWaitTime(), TimeUnit.SECONDS);
         webDriverWait = new WebDriverWait(webDriver, WebDriverConfig.getInstance().getExplicitWaitTime());
     }
 

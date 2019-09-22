@@ -27,8 +27,8 @@ import org.openqa.selenium.WebDriver;
  * @version 0.0.1
  */
 public class Hook {
-    private WebDriver webDriver;
-    private Context context;
+    private final WebDriver webDriver;
+    private final Context context;
 
     /**
      * Constructor of Hook.
