@@ -288,7 +288,7 @@ public class Address {
         strategyMap.put("id_country", () -> setIdCountry(accountMap.get("id_country")));
         strategyMap.put("phone", () -> setPhone(accountMap.get("phone")));
         strategyMap.put("phone_mobile", () -> setPhoneMobile(accountMap.get("phone_mobile")));
-        strategyMap.put("other", () -> setAdditionalInfo(accountMap.get("additionalInfo")));
+        strategyMap.put("other", () -> setAdditionalInfo(accountMap.get("other")));
         strategyMap.put("alias", () -> setAlias(accountMap.get("alias")));
         return strategyMap;
     }
