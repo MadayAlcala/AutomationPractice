@@ -22,7 +22,6 @@ import org.openqa.selenium.support.FindBy;
  * @version 0.0.1
  */
 public class LoginPage extends BasePage {
-
     @FindBy(linkText = "Sign in")
     private WebElement signInLink;
 
@@ -34,29 +33,6 @@ public class LoginPage extends BasePage {
 
     @FindBy(css = "#SubmitLogin > span")
     private WebElement loginBtn;
-
-    @FindBy(id = "SubmitLogin")
-    private WebElement signInBtn;
-
-    /**
-     * This method is used for sign in while the user is doing a shopping.
-     */
-    public void getSignInBtn() {
-        signInBtn.click();
-    }
-
-    /**
-     * This method is in charge of the login to the application.
-     *
-     * @param email    'email', it indicates the email with which the login will be carried out.
-     * @param password 'password', it indicates the password with which the login will be carried out.
-     */
-    public void login(final String email, final String password) {
-        clickSignInLink();
-        setEmail(ReadAppFile.getInstance().getEmail());
-        setPassword(ReadAppFile.getInstance().getPassword());
-        clickSignInBtn();
-    }
 
     /**
      * This method is in charge of clicking on the sign in textLink.
@@ -88,5 +64,18 @@ public class LoginPage extends BasePage {
      */
     private void clickSignInBtn() {
         loginBtn.click();
+    }
+
+    /**
+     * This method is in charge of the login to the application.
+     *
+     * @param email    'email', it indicates the email with which the login will be carried out.
+     * @param password 'password', it indicates the password with which the login will be carried out.
+     */
+    public void login(final String email, final String password) {
+        clickSignInLink();
+        setEmail(ReadAppFile.getInstance().getEmail());
+        setPassword(ReadAppFile.getInstance().getPassword());
+        clickSignInBtn();
     }
 }

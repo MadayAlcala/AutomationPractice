@@ -15,16 +15,16 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 /**
- * Account class, this class is in charge of the account elements.
+ * AccountPage class, this class is in charge of the account elements.
  *
  * @author Maday Alcala
  * @version 0.0.1
  */
-public class Account extends BasePage {
+public class AccountPage extends BasePage {
     @FindBy(css = ".account")
     private WebElement accountBtn;
 
-    @FindBy(xpath = "//span[contains(text(), \"Order history and details\")]")
+    @FindBy(className = "icon-list-ol")
     private WebElement accountOrderHistoryBtn;
 
     /**

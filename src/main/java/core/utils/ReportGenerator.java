@@ -19,19 +19,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Report class, this class is in charge to create the cucumber reports.
+ * ReportGenerator class, this class is in charge to create the cucumber reports.
  *
  * @author Maday Alcala
  * @version 0.0.1
  */
-public class Report {
+public class ReportGenerator {
     /**
-     * This method gets an instance of Report from getInstance.
+     * This method gets an instance of ReportGenerator from getInstance.
      *
-     * @return an instance Report.
+     * @return an instance ReportGenerator.
      */
-    public static Report getInstance() {
-        return new Report();
+    public static ReportGenerator getInstance() {
+        return new ReportGenerator();
     }
 
     /**

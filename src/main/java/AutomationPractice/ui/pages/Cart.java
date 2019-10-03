@@ -26,7 +26,7 @@ public class Cart extends BasePage {
     @FindBy(css = ".shopping_cart > a")
     private WebElement cartTab;
 
-    @FindBy(xpath = "//dt")
+    @FindBy(css = ".products > dt")
     private List<WebElement> cartProductsQty;
 
     /**

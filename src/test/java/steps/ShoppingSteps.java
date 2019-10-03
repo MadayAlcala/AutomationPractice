@@ -10,11 +10,8 @@
 
 package steps;
 
-import AutomationPractice.ui.pages.Account;
-import AutomationPractice.ui.pages.Cart;
-import AutomationPractice.ui.pages.CartSummary;
-import AutomationPractice.ui.pages.Clothes;
-import AutomationPractice.ui.pages.ShoppingActions;
+import AutomationPractice.ui.pages.*;
+import AutomationPractice.ui.pages.AccountPage;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.testng.Assert;
@@ -30,7 +27,7 @@ public class ShoppingSteps {
     private Cart cart;
     private ShoppingActions shoppingActions;
     private CartSummary summary;
-    private Account account;
+    private AccountPage accountPage;
 
     /**
      * This method is for choose a dress.
@@ -119,8 +116,8 @@ public class ShoppingSteps {
      */
     @Then("^The user should see the order history")
     public void orderHistoryIncresed() {
-        account = new Account();
-        account.getAccountBtn();
-        account.getAccountOrderHistoryBtn();
+        accountPage = new AccountPage();
+        accountPage.getAccountBtn();
+        accountPage.getAccountOrderHistoryBtn();
     }
 }
