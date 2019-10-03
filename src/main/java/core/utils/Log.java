@@ -10,8 +10,8 @@
 
 package core.utils;
 
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This class is used to generate logs.
@@ -20,34 +20,13 @@ import org.apache.log4j.Logger;
  * @version 0.0.1
  */
 public final class Log {
-    private static Log instance;
-    private static Logger log = Logger.getLogger(Log.class);
+    private static final Logger log = LoggerFactory.getLogger(Log.class);
 
     /**
-     * Private constructor for the Singleton pattern.
+     * Private constructor.
      */
     private Log() {
-        initialize();
-    }
 
-    /**
-     * This method initializes the logger characteristics.
-     */
-    private void initialize() {
-        log.setLevel(Level.ALL);
-    }
-
-    /**
-     * This method ensures that only one instance is created according
-     * to the builder pattern and returns a log instance.
-     *
-     * @return an 'instance' of Log.
-     */
-    public static Log getInstance() {
-        if (instance == null) {
-            instance = new Log();
-        }
-        return instance;
     }
 
     /**
@@ -55,7 +34,7 @@ public final class Log {
      *
      * @return a 'log'.
      */
-    public Logger getLog() {
+    public static Logger getLog() {
         return log;
     }
 }

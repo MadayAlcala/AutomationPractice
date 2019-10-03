@@ -10,8 +10,7 @@
 
 package core.selenium;
 
-import AutomationPractice.ui.Common.PropertyLoader;
-import core.selenium.webdrivers.BrowserType;
+import core.utils.PropertyLoader;
 
 import java.util.Properties;
 
@@ -52,7 +51,7 @@ public final class WebDriverConfig {
     /**
      * This method reads browser properties and initializes the basic browser characteristics.
      */
-    private void initialize() {
+    public void initialize() {
         properties = PropertyLoader.loadProperty(BROWSER_PROPERTIES);
     }
 
@@ -61,8 +60,8 @@ public final class WebDriverConfig {
      *
      * @return a browser type.
      */
-    public BrowserType getBrowser() {
-        return BrowserType.valueOf(properties.getProperty(BROWSER).toUpperCase());
+    public String getBrowser() {
+        return properties.getProperty(BROWSER).toLowerCase();
     }
 
     /**

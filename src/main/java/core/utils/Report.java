@@ -8,7 +8,7 @@
  *  with Jalasoft.
  */
 
-package AutomationPractice.ui.Report;
+package core.utils;
 
 import net.masterthought.cucumber.Configuration;
 import net.masterthought.cucumber.ReportBuilder;

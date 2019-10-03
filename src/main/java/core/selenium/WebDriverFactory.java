@@ -12,15 +12,10 @@ package core.selenium;
 
 import core.selenium.webdrivers.Chrome;
 import core.selenium.webdrivers.Firefox;
-import core.selenium.webdrivers.BrowserType;
-import core.selenium.webdrivers.IBrowser;
 import org.openqa.selenium.WebDriver;
 
 import java.util.HashMap;
 import java.util.Map;
-
-import static core.selenium.webdrivers.BrowserType.CHROME;
-import static core.selenium.webdrivers.BrowserType.FIREFOX;
 
 /**
  * WebDriverFactory class, this class initializes a browser according to the type it receives.
@@ -42,10 +37,10 @@ final class WebDriverFactory {
      * @param browserType 'browserType', this parameter indicates the type of browser to be initialized.
      * @return webDriver, an initialized browser.
      */
-    public static WebDriver getWebDriver(final BrowserType browserType) {
-        Map<BrowserType, IBrowser> map = new HashMap<>();
-        map.put(CHROME, new Chrome());
-        map.put(FIREFOX, new Firefox());
+    public static WebDriver getWebDriver(final String browserType) {
+        Map<String, IBrowser> map = new HashMap<>();
+        map.put("chrome", new Chrome());
+        map.put("firefox", new Firefox());
         return map.get(browserType).initDriver();
     }
 }

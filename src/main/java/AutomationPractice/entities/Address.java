@@ -8,7 +8,7 @@
  *  with Jalasoft.
  */
 
-package AutomationPractice.ui.entities;
+package AutomationPractice.entities;
 
 import java.util.HashMap;
 import java.util.Map;

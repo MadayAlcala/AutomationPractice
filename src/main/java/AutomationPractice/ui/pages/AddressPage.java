@@ -352,34 +352,34 @@ public class AddressPage extends BasePage {
     /**
      * This method is in charge of create a map for the address' elements.
      *
-     * @param accountMap that represent all the values for the elements.
+     * @param addressMap that represent all the values for the elements.
      */
-    public void setAccountInformation(final Map<String, String> accountMap) {
-        HashMap<String, Runnable> strategyMap = composeStrategyMap(accountMap);
-        accountMap.keySet().forEach(key -> strategyMap.get(key).run());
+    public void setAccountInformation(final Map<String, String> addressMap) {
+        HashMap<String, Runnable> strategyMap = composeStrategyMap(addressMap);
+        addressMap.keySet().forEach(key -> strategyMap.get(key).run());
     }
 
     /**
      * This method is in charge of fill of the address' element in the map.
      *
-     * @param accountMap that represents the values for the map.
+     * @param addressMap that represents the values for the map.
      * @return strategy map.
      */
-    private HashMap<String, Runnable> composeStrategyMap(final Map<String, String> accountMap) {
+    private HashMap<String, Runnable> composeStrategyMap(final Map<String, String> addressMap) {
         HashMap<String, Runnable> strategyMap = new HashMap<>();
-        strategyMap.put("firstname", () -> setFirstName(accountMap.get("firstname")));
-        strategyMap.put("lastname", () -> setLastName(accountMap.get("lastname")));
-        strategyMap.put("company", () -> setCompany(accountMap.get("company")));
-        strategyMap.put("address1", () -> setAddress1(accountMap.get("address1")));
-        strategyMap.put("address2", () -> setAddress2(accountMap.get("address2")));
-        strategyMap.put("city", () -> setCity(accountMap.get("city")));
-        strategyMap.put("id_state", () -> setIdState(accountMap.get("id_state")));
-        strategyMap.put("postcode", () -> setPostCode(accountMap.get("postcode")));
-        strategyMap.put("id_country", () -> setIdCountry(accountMap.get("id_country")));
-        strategyMap.put("phone", () -> setPhone(accountMap.get("phone")));
-        strategyMap.put("phone_mobile", () -> setPhoneMobile(accountMap.get("phone_mobile")));
-        strategyMap.put("other", () -> setOther(accountMap.get("other")));
-        strategyMap.put("alias", () -> setAlias(accountMap.get("alias")));
+        strategyMap.put("firstname", () -> setFirstName(addressMap.get("firstname")));
+        strategyMap.put("lastname", () -> setLastName(addressMap.get("lastname")));
+        strategyMap.put("company", () -> setCompany(addressMap.get("company")));
+        strategyMap.put("address1", () -> setAddress1(addressMap.get("address1")));
+        strategyMap.put("address2", () -> setAddress2(addressMap.get("address2")));
+        strategyMap.put("city", () -> setCity(addressMap.get("city")));
+        strategyMap.put("id_state", () -> setIdState(addressMap.get("id_state")));
+        strategyMap.put("postcode", () -> setPostCode(addressMap.get("postcode")));
+        strategyMap.put("id_country", () -> setIdCountry(addressMap.get("id_country")));
+        strategyMap.put("phone", () -> setPhone(addressMap.get("phone")));
+        strategyMap.put("phone_mobile", () -> setPhoneMobile(addressMap.get("phone_mobile")));
+        strategyMap.put("other", () -> setOther(addressMap.get("other")));
+        strategyMap.put("alias", () -> setAlias(addressMap.get("alias")));
         return strategyMap;
     }
 

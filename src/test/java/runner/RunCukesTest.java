@@ -10,7 +10,7 @@
 
 package runner;
 
-import AutomationPractice.ui.Report.Report;
+import core.utils.Report;
 import core.selenium.WebDriverManager;
 
 import cucumber.api.CucumberOptions;
@@ -29,6 +29,7 @@ import org.testng.annotations.AfterTest;
         features = {"src/test/resources/feature"})
 
 public class RunCukesTest extends AbstractTestNGCucumberTests {
+
     /**
      * This method afterExecution executes the project, close the driver instance and generates the reports.
      */

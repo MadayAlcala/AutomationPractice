@@ -8,7 +8,7 @@
  *  with Jalasoft.
  */
 
-package AutomationPractice.ui.Common;
+package core.utils;
 
 import core.utils.Log;
 
@@ -41,7 +41,7 @@ public final class PropertyLoader {
             properties = new Properties();
             properties.load(inputStream);
         } catch (Exception e) {
-            Log.getInstance().getLog().error(e + "File not found.");
+            Log.getLog().error(e + "File not found.");
             throw new RuntimeException("File not found." + e);
         }
         return properties;

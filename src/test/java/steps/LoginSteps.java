@@ -12,7 +12,7 @@ package steps;
 
 import AutomationPractice.ui.pages.HomePage;
 import AutomationPractice.ui.pages.LoginPage;
-import AutomationPractice.ui.pages.PageTransporter;
+import AutomationPractice.ui.PageTransporter;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -33,7 +33,7 @@ public class LoginSteps {
      *
      * @param url is the parameter that indicates what type of url needed.
      */
-    @Given("The user goes to \"([^\"]*)\" page")
+    @Given("The user goes to (.*) page")
     public void initializeLoginPage(final String url) {
         PageTransporter.goToUrl(url);
     }
@@ -44,7 +44,7 @@ public class LoginSteps {
      * @param email    'email', represents the email of an user.
      * @param password 'password', represents the password according to the email.
      */
-    @When("^The user fills the form with \"([^\"]*)\" and \"([^\"]*)\"$")
+    @When("^The user fills the form with (.*) and (.*)")
     public void fillLogInForm(final String email, final String password) {
         loginPage = new LoginPage();
         loginPage.login(email, password);
@@ -56,7 +56,7 @@ public class LoginSteps {
     @Then("Username should appear in the left panel")
     public void verifyUserName() {
         homePage = new HomePage();
-        Assert.assertEquals(homePage.getUserNameText(), "Maday Alcala",
+        Assert.assertEquals(homePage.getUserNameText(), "User Test",
                 "It is not the same text");
     }
 

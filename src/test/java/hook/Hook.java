@@ -10,7 +10,7 @@
 
 package hook;
 
-import AutomationPractice.ui.entities.Context;
+import AutomationPractice.entities.Context;
 import AutomationPractice.ui.pages.AddressPage;
 import AutomationPractice.ui.pages.HomePage;
 import core.selenium.WebDriverManager;

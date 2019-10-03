@@ -8,7 +8,9 @@
  *  with Jalasoft.
  */
 
-package AutomationPractice.ui.Common;
+package AutomationPractice.utils;
+
+import core.utils.PropertyLoader;
 
 import java.util.Properties;
 

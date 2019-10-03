@@ -10,9 +10,9 @@
 
 package steps;
 
-import AutomationPractice.ui.entities.Context;
+import AutomationPractice.entities.Context;
 import AutomationPractice.ui.pages.AddressPage;
-import AutomationPractice.ui.pages.PageTransporter;
+import AutomationPractice.ui.PageTransporter;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.testng.Assert;
@@ -39,23 +39,13 @@ public class AddressSteps {
     }
 
     /**
-     * This method is in charge of opening the address page.
-     *
-     * @param url is the parameter that indicates what type of url needed.
-     */
-    @When("^The user goes to create \"([^\"]*)\" form$")
-    public void goToAddressPage(final String url) {
-        PageTransporter.goToUrl(url);
-        addressPage = new AddressPage();
-    }
-
-    /**
      * This method fills the form address to be able to create it.
      *
      * @param addressMap that indicates all the fields.
      */
     @When("^The user fills the form with the following information$")
     public void crateNewAddress(final Map<String, String> addressMap) {
+        addressPage = new AddressPage();
         context.getAddress().setAccountInformation(addressMap);
         addressPage.setAccountInformation(addressMap);
         addressPage.clickSubmitBtn();

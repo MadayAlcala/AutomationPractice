@@ -1,13 +1,12 @@
 Feature: Address
 
   Background: Log in with valid credentials
-    Given The user goes to "login" page
-    When The user fills the form with "email" and "password"
-    Then Username should appear in the left panel
+    Given The user goes to login page
+    When The user fills the form with email and password
 
   @DeleteAddress @signOut
   Scenario: Create new address with the required fields
-    When The user goes to create "address" form
+    When The user goes to address page
     And The user fills the form with the following information
       | firstname  | Juan          |
       | lastname   | Perez         |
@@ -22,7 +21,7 @@ Feature: Address
 
   @DeleteAddress @signOut
   Scenario: Create new address with all the fields
-    When The user goes to create "address" form
+    When The user goes to address page
     And The user fills the form with the following information
       | firstname    | Juan          |
       | lastname     | Perez         |

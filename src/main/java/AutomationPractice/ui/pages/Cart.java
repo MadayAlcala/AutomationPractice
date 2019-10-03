@@ -43,6 +43,5 @@ public class Cart extends BasePage {
      */
     public void getCartTab() {
         cartTab.click();
-
     }
 }

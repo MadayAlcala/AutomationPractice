@@ -11,7 +11,7 @@
 package AutomationPractice.ui.pages;
 
 import AutomationPractice.ui.BasePage;
-import AutomationPractice.ui.Common.ReadAppFile;
+import AutomationPractice.utils.ReadAppFile;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 

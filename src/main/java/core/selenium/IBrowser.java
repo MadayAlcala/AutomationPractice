@@ -8,7 +8,7 @@
  *  with Jalasoft.
  */
 
-package core.selenium.webdrivers;
+package core.selenium;
 
 import org.openqa.selenium.WebDriver;
 

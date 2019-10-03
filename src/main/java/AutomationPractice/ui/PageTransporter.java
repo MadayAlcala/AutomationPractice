@@ -8,9 +8,9 @@
  *  with Jalasoft.
  */
 
-package AutomationPractice.ui.pages;
+package AutomationPractice.ui;
 
-import AutomationPractice.ui.Common.UrlBuilder;
+import AutomationPractice.utils.UrlBuilder;
 import core.selenium.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 
@@ -31,10 +31,10 @@ public final class PageTransporter {
     /**
      * This method is used for go to a page.
      *
-     * @param url The parameter url defines a input url.
+     * @param endpointKey The parameter url defines a input url.
      */
-    public static void goToUrl(final String url) {
+    public static void goToUrl(final String endpointKey) {
         WebDriver webDriver = WebDriverManager.getInstance().getWebDriver();
-        webDriver.navigate().to(UrlBuilder.getUrlReader(url));
+        webDriver.navigate().to(UrlBuilder.getUrl(endpointKey));
     }
 }
